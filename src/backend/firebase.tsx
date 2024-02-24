@@ -31,6 +31,7 @@ export const list_mentors = async ()=> {
 
 
 // TODO: upload new mentor
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const new_mentor = async(data: any) => {
   try {
    const mentorsRef = collection(db, 'mentors');
