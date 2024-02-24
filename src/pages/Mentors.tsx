@@ -1,5 +1,5 @@
 import Card from '../card.tsx'
-
+import '../styles/mentors.css'
 export const Mentors = () => {
     
     const userProfile = {
@@ -10,7 +10,7 @@ export const Mentors = () => {
     
     return (
         <div>
-            <h1 id = "intro-container">Meet with your mentors</h1>
+            <h1 id = "intro-container">Meet with your mentors!</h1>
             <div className = "w-1/2">
             <Card userProfile={userProfile} attributes={attributes} />
             </div>
