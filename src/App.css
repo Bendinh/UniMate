@@ -15,8 +15,8 @@
 #intro-container {
   text-align: left;
   color: white;
-  font-size: 46px;
+  padding: 3%;
+  font-size: 5vh;
   font-weight: normal;
   font-family: 'Georgia', serif;
 }
-
