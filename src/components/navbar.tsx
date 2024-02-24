@@ -6,7 +6,7 @@ export const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false)
     return (
     <nav>
-        <Link to="/" className="title"><img src={logo} alt="UniMate Logo" style={{height: '80px'}} /></Link>
+        <Link to="/" className="title"><img src={logo} alt="UniMate Logo" style={{height: '85px'}} /></Link>
         <div className="menu" onClick={() => {
             setMenuOpen(!menuOpen)
         }}>
