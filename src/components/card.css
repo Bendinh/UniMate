@@ -9,13 +9,15 @@
     margin-left: auto;
     color: black;
     line-height: normal;
+    text-align: center;
 }
 
 .card{
     position: relative;
     display: inline-block;   
-    max-width: 20%;
+    max-width: 19%;
     width: 100%;
+    min-width: 250px;
     background-color: white;
     border-radius:  18px;
     padding-left: 18px;
