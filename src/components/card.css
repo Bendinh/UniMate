@@ -8,34 +8,71 @@
     margin-right: auto;
     margin-left: auto;
     color: black;
+    line-height: normal;
 }
 
 .card{
     position: relative;
-    display: inline-block;
-    border: solid;
-    max-width: 22%;
+    display: inline-block;   
+    max-width: 20%;
+    width: 100%;
     background-color: white;
-    border-radius:  15px;
-    padding-left: 1%;
-    padding-right: 1%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    margin-right: 1.5%;
-    margin-left: 1.5%
+    border-radius:  18px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-right: 1%;
+    margin-left: 1%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    text-align: left;
+}
+
+.imgframe {
+    height: 15pc;
+    width: inherit;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+
+.imgframe img{
+    max-width: inherit;
+    max-height: inherit;
+    height: inherit;
+    width: inherit;
+    object-fit: cover;
+    object-position: center;
 }
 
 
 .caption{
+    width: 80%;
+    display: inline-block;
+    position:relative;
     font-weight: 800;
-    font-size: 20px;
+    font-size: 22px;
+    font-family: Avenir;
+    text-wrap: wrap;
+}
+
+.nationality{
+    width: 18%;
+    display: inline-block;
+    position: relative;
+    color: grey;
+    font-size: 13px;
+    text-align: right;
 }
 
 .gradyear{
     color: grey;
     font-size: 13px;
-    margin-bottom: 10%;
+    margin-bottom: 8%;
 }
+
+
 
 .attribute .attribute-icon{
     width: 18px;
@@ -49,18 +86,21 @@
 }
 
 .attribute{
-    margin-bottom: 10%;
+    margin-bottom: 8%;
     margin-left: 12%;
+    font-family:Roboto;
+    font-size: 15px;
 }
 
 .button-holder{
     float: right;
+    font-family: Roboto;
 }
 
 .button{
     text-align: center;
     border: solid;
-    padding: 3px 30px;
+    padding: 2px 25px;
     border-radius: 20px;
     background-color: #00B1D2;
     color: white;

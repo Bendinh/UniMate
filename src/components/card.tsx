@@ -19,12 +19,13 @@ function Card() {
   <> 
   <div className = "container">
     {mentors.map((mentor) => (
-      <div className = "card">
+      <div className = "card" key={mentor.id}>
         <div className = "imgframe">
-          <img src = "https://media.istockphoto.com/id/464988959/photo/mallard-duck-on-white-background.jpg?s=612x612&w=0&k=20&c=S1jcDuyXuoCVUaTobTrZ5f6SlscukkyheqKDHAeflW8="></img>
+          <img src={mentor.profile_pic != "" ? mentor.profile_pic : "./src/assets/alt_img/no_image.jpg"}></img>
         </div>
 
-        <div className="caption"> {mentor.name}</div>
+        <div className="caption">{mentor.name}</div>
+        <div className="nationality">{mentor.nationality}</div>
         <div className="gradyear"> Class of {mentor.graduation}</div>
         <div className="attribute">
           <div className="attribute-icon" style={{backgroundImage: 'url("./src/assets/edu.svg")'}}></div>
