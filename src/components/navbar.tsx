@@ -20,6 +20,7 @@ export const Navbar = () => {
             </li>
         </ul>
         <div className = 'menuDropDownContent' style = {{display: menuOpen ? "block": "none"}}>
+                <NavLink className="book-option" to="/" onClick={() => setMenuOpen(false)}>Home</NavLink>
                 <NavLink className="book-option" to="/mentors" onClick={() => setMenuOpen(false)}>Book Mentors</NavLink>
         </div>
     </nav>
