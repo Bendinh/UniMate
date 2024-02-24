@@ -1,6 +1,6 @@
 #intro-container {
     display: flex;
-    padding: 3%;
+    margin-left: auto;
     flex-direction: column;
     justify-content: center;
     flex-shrink: 0;
@@ -17,7 +17,6 @@
 
   @media (max-width: 600px) {
     #intro-container {
-      padding: 2%;
       font-size: 1.875rem;
     }
   }

@@ -11,12 +11,3 @@
   overflow-x: auto;
   overflow-y: auto;
 }
-
-#intro-container {
-  text-align: left;
-  color: white;
-  padding: 3%;
-  font-size: 5vh;
-  font-weight: normal;
-  font-family: 'Georgia', serif;
-}
