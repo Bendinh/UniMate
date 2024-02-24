@@ -1,7 +1,6 @@
 #intro-container {
     display: flex;
-    width: 34.875rem;
-    height: 6.875rem;
+    padding: 3%;
     flex-direction: column;
     justify-content: center;
     flex-shrink: 0;
@@ -13,4 +12,13 @@
     line-height: 2rem;
     letter-spacing: 0.03125rem;
     margin-left: 1.75rem;
+    text-align: left;
   }
+
+  @media (max-width: 600px) {
+    #intro-container {
+      padding: 2%;
+      font-size: 1.875rem;
+    }
+  }
+
