@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {NavLink,Link} from "react-router-dom";
-import "../styles/navbar.css";
+import "../components/navbar.css";
 import logo from "../assets/unimate_logo.png";
 export const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false)
