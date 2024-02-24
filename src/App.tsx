@@ -1,11 +1,21 @@
 import './App.css'
 import Card from './components/card'
 import './backend/firebase'
+import Navbar from './components/navbar.tsx';
+import {Route, Routes} from "react-router-dom"
+import {Mentors} from "./pages/Mentors.tsx"
+
 
 function App() {
   return (
     <>
-      <Card/>
+      <div className="App">
+        <Navbar/>
+        <Routes>
+          <Route path="/"/>
+          <Route path="/mentors" element={<Mentors/>}/>
+        </Routes>
+      </div>
     </>
   )
 }

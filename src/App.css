@@ -4,6 +4,10 @@
   text-align: center;
 }
 
-
-
-
+.App {
+  width: 100vw; /* Equivalent to w-screen */
+  height: 100vh; /* Equivalent to h-screen */
+  background: linear-gradient(to bottom, #00bcd4, #0c7bb3); 
+  overflow-x: auto;
+  overflow-y: auto;
+}
