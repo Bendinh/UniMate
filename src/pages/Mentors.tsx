@@ -13,6 +13,8 @@ export const Mentors = () => {
             <h1 id = "intro-container">Meet with your mentors!</h1>
             <div className = "w-1/2">
             <Card userProfile={userProfile} attributes={attributes} />
+            <Card userProfile={userProfile} attributes={attributes} />
+            <Card userProfile={userProfile} attributes={attributes} />
             </div>
         </div>
     );
