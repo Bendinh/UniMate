@@ -5,9 +5,7 @@ import './backend/firebase'
 function App() {
   return (
     <>
-
       <Card/>
-      
     </>
   )
 }

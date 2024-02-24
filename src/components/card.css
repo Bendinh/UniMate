@@ -34,6 +34,7 @@
     width: inherit;
     overflow: hidden;
     border-radius: 15px;
+    margin-bottom: 2%;
 }
 
 
@@ -52,7 +53,7 @@
     display: inline-block;
     position:relative;
     font-weight: 800;
-    font-size: 22px;
+    font-size: 20px;
     font-family: Avenir;
     text-wrap: wrap;
 }
@@ -105,6 +106,7 @@
     background-color: #00B1D2;
     color: white;
     cursor: pointer;
+    font-weight: 500;
 }
 
 .button:hover{
