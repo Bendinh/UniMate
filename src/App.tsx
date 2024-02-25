@@ -3,6 +3,7 @@ import './backend/firebase'
 import Navbar from './components/navbar.tsx';
 import {Route, Routes} from "react-router-dom"
 import {Mentors} from "./pages/Mentors.tsx"
+import MentorProfile from './pages/mentorProfile.tsx';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/"/>
           <Route path="/mentors" element={<Mentors/>}/>
+          <Route path="/mentorProfile" element={<MentorProfile/>}></Route>
         </Routes>
       </div>
     </>

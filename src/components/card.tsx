@@ -1,6 +1,8 @@
 import './card.css'
 import { list_mentors } from '../backend/firebase';
 import { useState, useEffect } from "react";
+import {Link} from "react-router-dom";
+import MentorProfile from '../pages/mentorProfile';
 
 // Card component to display user profile and attributes
 function Card() {
@@ -43,9 +45,11 @@ function Card() {
           <div className="attribute-text">{mentor.topics.join(', ')}</div>
           </div>
         <div className="button-holder">
-          <div className="button">
-            Book
-          </div>
+          <Link to="/mentorProfile">
+            <div className="button">
+              Book
+            </div>
+          </Link>
         </div>
     </div>
     ))}
