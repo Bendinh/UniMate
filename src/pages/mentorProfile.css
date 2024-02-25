@@ -1,3 +1,45 @@
+.emptySpace{
+    padding-bottom: 3%;
+}
+
 .profile{
     background-color: white;
+    text-align: left;
+}
+
+.profileOverview{
+    padding-bottom: 5%;
+}
+.profileOverview .title{
+    color: #00239C;
+    font-weight: bold;   
+    font-size: 20px;
+    border-bottom:1px solid #00B1D2;
+    padding-bottom:1px;
+}
+
+.description{
+    max-width: 50%;
+    display: inline-block;
+    position:relative;
+    text-wrap: left;
+}
+
+.topics{
+    width: 30%;
+    display: inline-block;
+    position: relative;
+    float: right;
+}
+
+.reviews{
+    padding-bottom: 5%;
+}
+
+.reviews .title{
+    color: #00239C;
+    font-weight: bold;   
+    font-size: 20px;
+    border-bottom:1px solid #00B1D2;
+    padding-bottom:1px;
 }
