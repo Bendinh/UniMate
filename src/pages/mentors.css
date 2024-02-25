@@ -1,0 +1,23 @@
+#intro-container {
+    display: flex;
+    margin-left: auto;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #FFF;
+    font-family: Georgia;
+    font-size: 2.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2rem;
+    letter-spacing: 0.03125rem;
+    margin-left: 1.75rem;
+    text-align: left;
+  }
+
+  @media (max-width: 600px) {
+    #intro-container {
+      font-size: 1.875rem;
+    }
+  }
+
