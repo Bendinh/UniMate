@@ -1,4 +1,3 @@
-import React, {useState} from "react";
 import {NavLink,Link} from "react-router-dom";
 import "../components/navbar.css";
 import logo from "../assets/unimate_logo.png";
