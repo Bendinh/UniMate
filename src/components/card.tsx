@@ -2,7 +2,6 @@ import './card.css'
 import { list_mentors } from '../backend/firebase';
 import { useState, useEffect } from "react";
 import {Link} from "react-router-dom";
-import MentorProfile from '../pages/mentorProfile';
 
 // Card component to display user profile and attributes
 function Card() {
