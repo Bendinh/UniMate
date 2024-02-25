@@ -2,9 +2,16 @@
     padding-bottom: 3%;
 }
 
-.profile{
+.main{
     background-color: white;
     text-align: left;
+    padding-bottom: 100%;
+}
+
+.profile{
+    max-width: 92%;
+    margin-left: 4%;
+    margin-right: 4%;
 }
 
 .profileOverview{
