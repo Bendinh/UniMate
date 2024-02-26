@@ -44,8 +44,8 @@ function Card() {
           <div className="attribute-text">{mentor.topics.join(', ')}</div>
           </div>
         <div className="button-holder">
-          <div className='button'>
-            <PopupButton
+          <div>
+            <PopupButton className='button'
             url={mentor.bookingLink}
             rootElement={document.getElementById("root")!}
             text="Book"
