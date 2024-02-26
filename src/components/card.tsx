@@ -1,6 +1,7 @@
 import './card.css'
 import { list_mentors } from '../backend/firebase';
 import { useState, useEffect } from "react";
+import { PopupButton } from "react-calendly";
 
 // Card component to display user profile and attributes
 function Card() {
@@ -43,8 +44,12 @@ function Card() {
           <div className="attribute-text">{mentor.topics.join(', ')}</div>
           </div>
         <div className="button-holder">
-          <div className="button">
-            Book
+          <div className='button'>
+            <PopupButton
+            url={mentor.bookingLink}
+            rootElement={document.getElementById("root")!}
+            text="Book"
+            />
           </div>
         </div>
     </div>
