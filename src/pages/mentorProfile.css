@@ -1,3 +1,5 @@
+/* Too many classes =(((((*/
+
 .emptySpace{
     padding-bottom: 5%;
 }
@@ -5,7 +7,8 @@
 .main{
     background-color: white;
     text-align: left;
-    padding-bottom: 100%;
+    padding-bottom: 100%; 
+    color: black;
 }
 
 .profile{
@@ -94,3 +97,5 @@
     border-bottom:1px solid #00B1D2;
     padding-bottom:1px;
 }
+
+
