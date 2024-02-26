@@ -8,13 +8,26 @@ function MentorProfile(){
                     {/* Nguyen Le */}
                     <div className="generalInfo">
                         <div className="pfp">
-                            <h1>[PICTURE]</h1>
-                            <img src=""></img>
+                            <img src="./src/assets/alt_img/no_image.jpg"></img>
                         </div>
-                        <div className="name"></div>
-                        <div className="major"></div>
-                        <div className="school"></div>
-                        <div className="gradYear"></div>
+                        <div className="emptySpace"></div>
+                        <div className="attributes">
+                            <div className="name">Mathew Nunez</div>
+                            <div className="nationality">
+                                <img src=""></img>
+                            </div>
+                            <div className="major">Computer Science Major</div>
+                            <div className="education">
+                                <div className="logo">
+                                    <img src="./src/assets/bu.svg"></img>
+                                </div>
+                                <div className="eduinfo">
+                                    <div className="school">Boston University</div>
+                                    <div className="gradYear">Class of 2027</div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
                     <div className="profileOverview">

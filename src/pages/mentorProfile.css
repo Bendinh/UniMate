@@ -1,5 +1,5 @@
 .emptySpace{
-    padding-bottom: 3%;
+    padding-bottom: 5%;
 }
 
 .main{
@@ -12,6 +12,51 @@
     max-width: 92%;
     margin-left: 4%;
     margin-right: 4%;
+}
+
+.generalInfo{
+    padding-bottom: 5%;
+    display: inline-block;
+}
+
+.pfp img{
+    max-width: 30%;
+    position:relative;
+    float: left;
+    padding-right: 7%;
+}
+
+.attributes{
+    line-height: 130%;
+    width: 30%;
+    position: relative;
+    float: left;
+    color: black;
+}
+
+.attributes .name{
+    font-weight: bold;
+    font-size: 150%;
+}
+
+.education{
+    padding-top: 12%;
+}
+
+.education .logo img{
+    position:relative;
+    float: left;
+    padding-right: 7%;
+}
+
+.education .eduinfo{
+    position: relative;
+    float: left;
+    font-size: small;
+}
+
+.education .eduinfo .school{
+    font-weight: bold;
 }
 
 .profileOverview{
@@ -34,7 +79,6 @@
 
 .topics{
     width: 30%;
-    display: inline-block;
     position: relative;
     float: right;
 }
