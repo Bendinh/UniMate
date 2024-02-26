@@ -1,5 +1,5 @@
 import './App.css'
-import './backend/firebase'
+import './services/firebase.tsx'
 import Navbar from './components/navbar.tsx';
 import {Route, Routes} from "react-router-dom"
 import {Mentors} from "./pages/Mentors.tsx"

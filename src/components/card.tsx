@@ -1,5 +1,5 @@
 import './card.css'
-import { list_mentors } from '../backend/firebase';
+import { list_mentors } from '../services/firebase';
 import { useState, useEffect } from "react";
 import {Link} from "react-router-dom";
 
