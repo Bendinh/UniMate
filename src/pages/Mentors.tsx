@@ -1,5 +1,5 @@
-import '../pages/mentors.css'
-import Card from '../components/card'
+import '../styles/mentors.css'
+import Card from '../components/displayMentor/card'
 
 export const Mentors = () => {
     
