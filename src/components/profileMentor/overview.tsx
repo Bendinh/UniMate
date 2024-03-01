@@ -3,11 +3,12 @@ import Review from './review'
 function Overview(){
     return (
         <>
-        <div className="emptySpace"></div>
         <div className='main'>
+        <div className="foreground"></div>
             <div className='profile'>
                 <div className="generalInfo"> {/* instead of using each class for each section, use a single container for all*/}
                     <div className="pfp">
+                        
                         <img src="./src/assets/alt_img/no_image.jpg"></img>
                     </div>
                     <div className="emptySpace"></div> {/* Don't do this*/}
@@ -27,6 +28,8 @@ function Overview(){
                             </div>
                         </div>
                     </div>
+
+                    <div className='button profile-button'>BOOK A MEETING</div>
 
                 </div>
 

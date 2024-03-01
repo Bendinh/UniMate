@@ -1,7 +1,14 @@
 /* Too many classes =(((((*/
+.foreground{
+    padding-bottom: 5%;
+    background: linear-gradient(180deg, #00B1D2 0%, rgba(0, 35, 156, 0.80) 118.22%);
+    position: absolute;
+    width: 100%;
+}
 
 .emptySpace{
-    padding-bottom: 5%;
+    padding-bottom: 10%;
+    position: relative;
 }
 
 .main{
@@ -9,6 +16,7 @@
     text-align: left;
     padding-bottom: 100%; 
     color: black;
+    position: relative;
 }
 
 .profile{
@@ -20,13 +28,22 @@
 .generalInfo{
     padding-bottom: 5%;
     display: inline-block;
+    margin-top: 3%;
+}
+
+.generalInfo .button.profile-button{
+    position: absolute;
+    right: 100px;
 }
 
 .pfp img{
     max-width: 30%;
     position:relative;
     float: left;
-    padding-right: 7%;
+    position: relative;
+    border-radius: 5%;
+    background-color: white;
+    padding: 10px 10px;
 }
 
 .attributes{
@@ -35,6 +52,7 @@
     position: relative;
     float: left;
     color: black;
+    margin-left: 5%;
 }
 
 .attributes .name{
