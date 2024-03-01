@@ -1,13 +1,11 @@
-import '../styles/mentors.css'
-import Card from '../components/displayMentor/card'
+import Card from '../components/Mentors/card'
 
-export const Mentors = () => {
+function Mentors(){
     
     return (
-        <div>
-            <h1 id = "intro-container">Meet with your mentors!</h1>
-            <Card />
-        </div>
+        <>
+        <Card />
+        </>
     );
 };
 

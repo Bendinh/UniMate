@@ -20,6 +20,7 @@ function Card() {
   return (
   <> 
   <div className = "container">
+    <h1>Meet our mentor!</h1>
     {mentors.map((mentor) => (
       <div className = "card" key={mentor.id}>
         <div className = "imgframe">
