@@ -1,25 +1,12 @@
 import './card.css'
-import { list_mentors } from '../backend/firebase';
-import { useState, useEffect } from "react";
+import { Mentor } from '../types/mentor'
 
 // Card component to display user profile and attributes
-function Card() {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [mentors, setMentors] = useState<any []>([]);
-  
-  useEffect(() => {
-    const fetch_mentors = async() => {
-      const mentors  = await list_mentors()
-      setMentors(mentors)
-    };
-    
-    fetch_mentors();
-  }, [])
-
+function Card({mentors}: {mentors: Mentor[]}) {
   return (
   <> 
   <div className = "container">
-    {mentors.map((mentor) => (
+    {mentors.map((mentor: Mentor) => (
       <div className = "card" key={mentor.id}>
         <div className = "imgframe">
           <img src={mentor.profile_pic != "" ? mentor.profile_pic : "./src/assets/alt_img/no_image.jpg"}></img>

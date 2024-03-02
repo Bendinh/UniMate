@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, getDocs, collection, doc, setDoc} from "firebase/firestore";
+import { getFirestore, getDocs, collection, doc, setDoc, query, where } from "firebase/firestore";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -23,8 +23,23 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-export const list_mentors = async ()=> {
-    const mentorsRef = await getDocs(collection(db, 'mentors'));
+export const list_mentors = async (filters: {topic?: string, major?: string, nationality?: string, school?: string} = {})=> {
+    let q = query(collection(db, 'mentors'));
+
+    if (filters.topic) {
+      q = query(q, where("topics", "array-contains", filters.topic));
+    }
+    if (filters.major) {
+      q = query(q, where("major", "==", filters.major));
+    }
+    if (filters.nationality) {
+      q = query(q, where("nationality", "==", filters.nationality));
+    }
+    if (filters.school) {
+      q = query(q, where("school", "==", filters.school));
+    }
+
+    const mentorsRef = await getDocs(q);
     const data = mentorsRef.docs.map(doc => ({id: doc.id, ... doc.data()}))
     return data
 }
