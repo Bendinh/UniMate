@@ -1,6 +1,13 @@
 import '../../styles/overview.css'
 import Review from './review'
+import { useState, useEffect } from 'react';
+
 function Overview(){
+    
+    document.addEventListener('scroll', function() {
+        const scrollPosition = window.scrollY
+        console.log(scrollPosition)
+    })
     return (
         <>
         <div className='main'>
