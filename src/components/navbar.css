@@ -1,139 +1,171 @@
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    height: 92px;
-    position: sticky;
-    top: 0;
-    z-index: 1001
-}
-
-nav .title {
-    margin: 1rem;
-}
-
-nav .book-button {
-    width: 220px;
-    height: 42px;
-    flex-shrink: 0;
-    text-align: center;
-    border-radius: 20px;
-    background: #00B1D2;
-    color: white;
-}
-
-nav ul {
-    display: flex;
-}
-
-nav ul .open {
-    display: flex;
-}
-
-nav ul li {
-    list-style: none;
-}
-
-nav ul li a {
-    display: block;
-    text-decoration: none;
-    color: white;
-    padding: 0.5rem;
-    margin: 0rem 0.5rem;
-    border-radius: 0.5rem;
-}
-
-nav ul li a:hover {
-    color: black;
-}
-
-nav .book-option {
-    display: none;
-    text-align: center;
-}
-
-nav .menu {
-    display: none;
-    position: absolute;
-    top: 2.625rem;
-    right: 0.75rem;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 2.25rem;
-    height: 2rem;
-}
-
-nav .menu span {
-    height: 0.4rem;
+    position: fixed;
+    /* position: sticky; */
     width: 100%;
-    background-color: #00B1D2;
-    border-radius: 0.2rem
+    background-color: white;
+    z-index: 1001;
 }
 
-@media (max-width: 480px) {
-    nav .menu {
-        display:flex;
-    }
+nav .nav-container a{
+    color: #777;
+}
 
-    nav {
-        flex-direction: column;
-        align-items: start;
-    }
+nav .nav-container{
+    position: relative;
+    height: 70px;
+    max-width: 1380px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: flex;
+    border:solid;
+}
 
-    nav ul {
+nav .nav-container .item{
+    display: inline-block;
+    position: relative;
+    color: black;
+    left:0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    color: #777;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.nav-container .item.logo{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 155px;
+    height: 70px;
+    margin-right: 8%;
+}
+
+.nav-container .item.login{
+    margin-left: 5%;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.nav-container .item.login .icon{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 28px;
+    height: 26.631px;
+    position: absolute;
+    left: -30px;
+}
+
+nav .nav-container .item.tablist{
+    width: 70%;
+    text-align: center;
+}
+
+nav .nav-container .item.tablist .tab{
+    position: relative;
+    display:inline-block;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+nav .nav-container .item.tablist .tab:hover{
+    text-decoration: underline;
+}
+
+.menu .option{
+    display: none;
+}
+
+
+@media screen and (max-width: 660px) {
+
+    nav .nav-container .item.tablist{
         display: none;
-        flex-direction: column;
-        width: 50%;
-        margin-bottom: 0.25rem;
     }
 
-    nav ul.open {
-        display: flex;
-        top: 92px; /* Adjust based on your navbar height */
-        right: 0;
-    }
-    
-    nav .book-button {
+    .nav-container .item.login{
         display: none;
     }
 
-    nav .book-option {
-        display: block;
-        text-align: center;
+
+    nav .nav-container .item{
+        display: inline-block;
+        position: relative;
         color: black;
+        color: #777;
+        font-size: 18px;
+        font-weight: 500; 
+        width: 40%;
+        text-align: left;
     }
 
-    nav ul li {
+    .nav-container .item-v2{
         width: 100%;
-        text-align: center;
+        margin-top: auto;
+        margin-bottom: auto;
+        position: relative;
     }
 
-    nav ul li a {
-        margin: 0.2rem 0.5rem;
-    }
-
-    nav .menuDropDownContent {
-        display: none;
+    .nav-container .item-v2 .burger{
+        cursor: pointer;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 32px;
+        height: 32px;
         position: absolute;
+        top: -15px;
+        right: 10px;
+    }
+
+    .menu{
+        position: fixed;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         background-color: white;
-        min-width: 120px;
-        border-radius: 0.5rem;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        right: 0;
-        top: 92px;
-    }
-
-    nav .menuDropDownContent a {
         color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        text-align: center;
+        width: 100%;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        right: 0;
+        left: 0;
+        border-radius: 20px;
+        text-align: center; 
+        padding: 20px 0px;
+        height: 18%;
+        transition: linear 0.2s;
+        opacity: 1;
     }
 
-    nav .menuDropDownContent a:hover {
-       background-color: #ddd;
+    .menu.close{
+        height: 0%;
+        padding:0px;
+        transition: linear 0.2s;
+        opacity: 0;
+    }
+
+    .menu.close .option{
+        display: none;
+        height: 30%;
+        transition: linear 0.2s;
+        opacity: 0;
+    }
+
+    .menu a{
+        color: #777;
+    }
+
+    .menu .option{
+        padding-bottom: 10px;
+        margin-top: 10px;
+        margin-left: 40px;
+        margin-right: 40px;
+        font-size: 20px;
+        font-weight: 500;
+        border-bottom: solid lightgray;
     }
 }
