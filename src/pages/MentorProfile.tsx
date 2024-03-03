@@ -1,8 +1,8 @@
-import Overview from "../components/profileMentor/overview";
+import Overview_v2 from "../components/profileMentor/overview_v2";
 function MentorProfile(){
     return(
         <>
-        <Overview/>
+        <Overview_v2/>
         </>
     );
 }

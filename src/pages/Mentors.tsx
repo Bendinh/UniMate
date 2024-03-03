@@ -7,7 +7,7 @@ function Mentors(){
         <Card />
         </>
     );
-};
+}
 
 export default Mentors
  
