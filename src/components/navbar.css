@@ -139,6 +139,7 @@ nav .nav-container .item.tablist .tab:hover{
         height: 18%;
         transition: linear 0.2s;
         opacity: 1;
+        color: black;
     }
 
     .menu.close{
@@ -160,6 +161,7 @@ nav .nav-container .item.tablist .tab:hover{
     }
 
     .menu .option{
+        display: block;
         padding-bottom: 10px;
         margin-top: 10px;
         margin-left: 40px;
