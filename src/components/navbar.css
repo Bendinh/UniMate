@@ -79,8 +79,11 @@ nav .nav-container .item.tablist .tab:hover{
     display: none;
 }
 
+.nav-container .item-v2 .burger{
+    display: none;
+}
 
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 480px) {
 
     nav .nav-container .item.tablist{
         display: none;
@@ -110,14 +113,14 @@ nav .nav-container .item.tablist .tab:hover{
     }
 
     .nav-container .item-v2 .burger{
+        display: flex;
         cursor: pointer;
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
-        width: 32px;
-        height: 32px;
+
         position: absolute;
-        top: -15px;
+        top: -10px;
         right: 10px;
     }
 

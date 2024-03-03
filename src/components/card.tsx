@@ -2,7 +2,7 @@ import './card.css'
 import { list_mentors } from '../backend/firebase';
 import { useState, useEffect } from "react";
 import { PopupButton } from "react-calendly";
-import {BusinessCenter, School, Star, AccountBox} from '@mui/icons-material';
+import {BusinessCenter, School, Star} from '@mui/icons-material';
 
 // Card component to display user profile and attributes
 function Card() {

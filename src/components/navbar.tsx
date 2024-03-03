@@ -1,9 +1,8 @@
 import {Link} from "react-router-dom";
 import "../components/navbar.css";
 import logo from "../assets/unimate_logo.png";
-import login from "../assets/login.svg"
-import burger from "../assets/burger.svg"
 import { useRef } from 'react';
+import {Menu, AccountCircle} from '@mui/icons-material';
 
 export const Navbar = () => {
     const menu = useRef<HTMLDivElement>(null);
@@ -26,16 +25,16 @@ export const Navbar = () => {
                 <div className='tab'><Link to='/about'>ABOUT</Link></div>
             </div>
             <div className='item login'>
-                <div className='icon' style={{backgroundImage: `url(${login})`}}></div>
+                <div className='icon'><AccountCircle/></div>
                 LOGIN
             </div>
             <div className='item-v2'>
-                <div className='burger' style={{backgroundImage: `url(${burger})`}} onClick={openMenu}></div>
+                <div className='burger' onClick={openMenu}><Menu/></div>
             </div>
         </div>
         {/*Menu for mobile*/}
         <div className='menu' ref={menu}>
-            <Link to='/home'><div className='option' onClick={openMenu}>Home</div></Link>
+            <Link to='/'><div className='option' onClick={openMenu}>Home</div></Link>
             <Link to='/mentors'><div className='option' onClick={openMenu}>Mentors</div></Link>
             <Link to='/about'><div className='option' onClick={openMenu}>About</div></Link>
         </div>
