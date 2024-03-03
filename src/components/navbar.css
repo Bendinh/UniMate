@@ -18,7 +18,6 @@ nav .nav-container{
     margin-right: auto;
     text-align: center;
     display: flex;
-    border:solid;
 }
 
 nav .nav-container .item{
