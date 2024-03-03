@@ -2,6 +2,7 @@ import './card.css'
 import { list_mentors } from '../backend/firebase';
 import { useState, useEffect } from "react";
 import { PopupButton } from "react-calendly";
+import {BusinessCenter, School, Star, AccountBox} from '@mui/icons-material';
 
 // Card component to display user profile and attributes
 function Card() {
@@ -31,16 +32,16 @@ function Card() {
         <div className="gradyear"> Class of {mentor.graduation}</div>
         {/* Should be only max 2 lines, else put ... */}
         <div className="attribute">
-          <div className="attribute-icon" style={{backgroundImage: 'url("./src/assets/edu.svg")'}}></div>
+          <div className="attribute-icon"><School/></div>
           <div className="attribute-text">{mentor.school}</div>
         </div>
         <div className="attribute">
-          <div className="attribute-icon" style={{backgroundImage: 'url("./src/assets/major.svg")'}}></div>
+          <div className="attribute-icon"><BusinessCenter/></div>
           <div className="attribute-text">{mentor.major}</div>
           </div>
         <div className="attribute">
           {/* Top two topics only */}
-          <div className="attribute-icon" style={{backgroundImage: 'url("./src/assets/topic.svg")'}}></div>
+          <div className="attribute-icon"><Star/></div>
           <div className="attribute-text">{mentor.topics.join(', ')}</div>
           </div>
         <div className="button-holder">
