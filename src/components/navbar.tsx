@@ -16,6 +16,7 @@ export const Navbar = () => {
         }
     }
     return (
+    <>
     <nav>
         <div className='nav-container'>
             <Link to='/'><div className='item logo' style={{backgroundImage: `url(${logo})`}}></div></Link>
@@ -34,11 +35,12 @@ export const Navbar = () => {
         </div>
         {/*Menu for mobile*/}
         <div className='menu' ref={menu}>
-            <Link to='/'><div className='option' onClick={openMenu}>Home</div></Link>
-            <Link to='/mentors'><div className='option' onClick={openMenu}>Mentors</div></Link>
-            <Link to='/about'><div className='option' onClick={openMenu}>About</div></Link>
-        </div>
+        <Link to='/'><div className='option' onClick={openMenu}>Home</div></Link>
+        <Link to='/mentors'><div className='option' onClick={openMenu}>Mentors</div></Link>
+        <Link to='/about'><div className='option' onClick={openMenu}>About</div></Link>
+    </div>
     </nav>
+    </>
     );
 };
 
