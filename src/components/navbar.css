@@ -1,6 +1,6 @@
 nav {
-    position: fixed;
-    /* position: sticky; */
+    position: sticky;
+    top: 0;
     width: 100%;
     background-color: white;
     z-index: 1001;
@@ -83,7 +83,7 @@ nav .nav-container .item.tablist .tab:hover{
     display: none;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 650px) {
 
     nav .nav-container .item.tablist{
         display: none;
@@ -118,7 +118,6 @@ nav .nav-container .item.tablist .tab:hover{
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
-
         position: absolute;
         top: -10px;
         right: 10px;
