@@ -65,7 +65,13 @@ export const Mentors = () => {
                 <Filter options={topics} onSelect={(value) => handleFilterChange(value, 'topics')} placeholder="Topic of Interest" />
             </div>
             
-            <Card mentors={displayedMentors as Mentor[]} />
+            {displayedMentors.length > 0 ? (
+                <Card mentors={displayedMentors} />
+            ) : (
+                <div style={{ textAlign: 'center', marginTop: 'auto', fontSize: '4vh' }}>
+                    Oops, there are no current mentors that fit your criteria.
+                </div>
+            )}
         </div>
     );
 };
