@@ -1,6 +1,5 @@
 import '../../styles/overview.css'
 import Review from './review'
-import { useState, useEffect } from 'react';
 
 function Overview(){
     
