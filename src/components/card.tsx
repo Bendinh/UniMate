@@ -1,5 +1,9 @@
 import './card.css'
 import { Mentor } from '../types/mentor'
+import { list_mentors } from '../backend/firebase';
+import { useState, useEffect } from "react";
+import { PopupButton } from "react-calendly";
+import {BusinessCenter, School, Star} from '@mui/icons-material';
 
 // Card component to display user profile and attributes
 function Card({mentors}: {mentors: Mentor[]}) {
@@ -17,21 +21,25 @@ function Card({mentors}: {mentors: Mentor[]}) {
         <div className="gradyear"> Class of {mentor.graduation}</div>
         {/* Should be only max 2 lines, else put ... */}
         <div className="attribute">
-          <div className="attribute-icon" style={{backgroundImage: 'url("./src/assets/edu.svg")'}}></div>
+          <div className="attribute-icon"><School/></div>
           <div className="attribute-text">{mentor.school}</div>
         </div>
         <div className="attribute">
-          <div className="attribute-icon" style={{backgroundImage: 'url("./src/assets/major.svg")'}}></div>
+          <div className="attribute-icon"><BusinessCenter/></div>
           <div className="attribute-text">{mentor.major}</div>
           </div>
         <div className="attribute">
           {/* Top two topics only */}
-          <div className="attribute-icon" style={{backgroundImage: 'url("./src/assets/topic.svg")'}}></div>
+          <div className="attribute-icon"><Star/></div>
           <div className="attribute-text">{mentor.topics.join(', ')}</div>
           </div>
         <div className="button-holder">
-          <div className="button">
-            Book
+          <div>
+            <PopupButton className='button'
+            url={mentor.bookingLink}
+            rootElement={document.getElementById("root")!}
+            text="Book"
+            />
           </div>
         </div>
     </div>
