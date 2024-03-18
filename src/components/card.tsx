@@ -4,14 +4,20 @@ import { list_mentors } from '../backend/firebase';
 import { useState, useEffect } from "react";
 import { PopupButton } from "react-calendly";
 import {BusinessCenter, School, Star} from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
 
 // Card component to display user profile and attributes
 function Card({mentors}: {mentors: Mentor[]}) {
+  const navigate = useNavigate();
+  const mentorProfile = () =>{
+    navigate('/mentorProfile')
+  }
   return (
   <> 
   <div className = "container">
     {mentors.map((mentor: Mentor) => (
       <div className = "card" key={mentor.id}>
+        <span onClick={mentorProfile}>
         <div className = "imgframe">
           <img src={mentor.profile_pic != "" ? mentor.profile_pic : "./src/assets/alt_img/no_image.jpg"}></img>
         </div>
@@ -33,6 +39,7 @@ function Card({mentors}: {mentors: Mentor[]}) {
           <div className="attribute-icon"><Star/></div>
           <div className="attribute-text">{mentor.topics.join(', ')}</div>
           </div>
+        </span>
         <div className="button-holder">
           <div>
             <PopupButton className='button'
