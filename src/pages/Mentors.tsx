@@ -14,11 +14,14 @@ export const Mentors = () => {
     const [filterCriteria, setFilterCriteria] = useState<FilterProps>({topics: [], majors: [], nationalities: [], schools: []})
     const [filterAttributes, setFilterAttributes] = useState({topics: [], majors: [], nationalities: [], schools: []});
     const {topics, majors, nationalities, schools} = filterAttributes
+    const [filterAttempted, setFilterAttempted] = useState(false);
+
     const handleFilterChange = (value: string, filterType: keyof FilterProps) => {
         setFilterCriteria(prevCriteria => ({
             ...prevCriteria,
             [filterType]: value === '*' ? [] : [value],
         }));
+        setFilterAttempted(true);
     };
 
     useEffect(() => {
@@ -67,7 +70,7 @@ export const Mentors = () => {
             
             {displayedMentors.length > 0 ? (
                 <Card mentors={displayedMentors} />
-            ) : (
+            ) : filterAttempted && (
                 <div style={{ textAlign: 'center', marginTop: 'auto', fontSize: '4vh' }}>
                     Oops, there are no current mentors that fit your criteria.
                 </div>
