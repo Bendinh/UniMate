@@ -27,7 +27,7 @@ export const Navbar = () => {
             </div>
             <div className='item login'>
                 <div className='icon'><AccountCircle/></div>
-                LOGIN
+                <Link to='/createAccount'>LOGIN</Link>
             </div>
             <div className='item-v2'>
                 <div className='burger' onClick={openMenu}><Menu/></div>
