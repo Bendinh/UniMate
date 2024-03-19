@@ -7,4 +7,5 @@ export interface Mentor {
     school: string;
     major: string;
     topics: string[];
+    bookingLink: string;
 }

@@ -12,7 +12,7 @@ export const Mentors = () => {
     const [fetchedMentors, setMentors] = useState<Mentor[]>([]);
     const [displayedMentors, setDisplayedMentors] = useState<Mentor[]>([]);
     const [filterCriteria, setFilterCriteria] = useState<FilterProps>({topics: [], majors: [], nationalities: [], schools: []})
-    const [filterAttributes, setFilterAttributes] = useState({topics: [], majors: [], nationalities: [], schools: []});
+    const [filterAttributes, setFilterAttributes] = useState<FilterProps>({topics: [], majors: [], nationalities: [], schools: []});
     const {topics, majors, nationalities, schools} = filterAttributes
     const [filterAttempted, setFilterAttempted] = useState(false);
 
@@ -26,7 +26,7 @@ export const Mentors = () => {
 
     useEffect(() => {
         const fetch_mentors = async() => {
-            const fetchedMentors  = await list_mentors()
+            const fetchedMentors  = await list_mentors() as Mentor[];
             setMentors(fetchedMentors as Mentor[])
 
             // Extract unique topics, majors, nationalities, and schools

@@ -1,7 +1,5 @@
 import './card.css'
 import { Mentor } from '../types/mentor'
-import { list_mentors } from '../backend/firebase';
-import { useState, useEffect } from "react";
 import { PopupButton } from "react-calendly";
 import {BusinessCenter, School, Star} from '@mui/icons-material';
 
