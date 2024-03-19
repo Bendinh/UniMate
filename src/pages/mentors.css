@@ -17,7 +17,12 @@
 
   @media (max-width: 600px) {
     #intro-container {
-      font-size: 1.875rem;
+      font-size: 2.5rem;
     }
   }
 
+  .filter-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
