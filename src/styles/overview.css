@@ -1,0 +1,117 @@
+/* Too many classes =(((((*/
+.foreground{
+    padding-bottom: 5%;
+    background: linear-gradient(180deg, #00B1D2 0%, rgba(0, 35, 156, 0.80) 118.22%);
+    position: absolute;
+    width: 100%;
+}
+
+.emptySpace{
+    padding-bottom: 10%;
+    position: relative;
+}
+
+.main{
+    background-color: white;
+    text-align: left;
+    padding-bottom: 100%; 
+    color: black;
+    position: relative;
+}
+
+.profile{
+    max-width: 92%;
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+.generalInfo{
+    padding-bottom: 5%;
+    display: inline-block;
+    margin-top: 3%;
+}
+
+.generalInfo .button.profile-button{
+    position: absolute;
+    right: 100px;
+}
+
+.pfp img{
+    max-width: 30%;
+    position:relative;
+    float: left;
+    position: relative;
+    border-radius: 5%;
+    background-color: white;
+    padding: 10px 10px;
+}
+
+.attributes{
+    line-height: 130%;
+    width: 30%;
+    position: relative;
+    float: left;
+    color: black;
+    margin-left: 5%;
+}
+
+.attributes .name{
+    font-weight: bold;
+    font-size: 150%;
+}
+
+.education{
+    padding-top: 12%;
+}
+
+.education .logo img{
+    position:relative;
+    float: left;
+    padding-right: 7%;
+}
+
+.education .eduinfo{
+    position: relative;
+    float: left;
+    font-size: small;
+}
+
+.education .eduinfo .school{
+    font-weight: bold;
+}
+
+.profileOverview{
+    padding-bottom: 5%;
+}
+.profileOverview .title{
+    color: #00239C;
+    font-weight: bold;   
+    font-size: 20px;
+    border-bottom:1px solid #00B1D2;
+    padding-bottom:1px;
+}
+
+.description{
+    max-width: 50%;
+    display: inline-block;
+    position:relative;
+    text-wrap: left;
+}
+
+.topics{
+    width: 30%;
+    position: relative;
+    float: right;
+}
+
+.reviews{
+    padding-bottom: 5%;
+}
+
+.reviews .title{
+    color: #00239C;
+    font-weight: bold;   
+    font-size: 20px;
+    border-bottom:1px solid #00B1D2;
+    padding-bottom:1px;
+}

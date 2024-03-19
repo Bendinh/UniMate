@@ -23,7 +23,7 @@ function Card({mentors}: {mentors: Mentor[]}) {
         <div className="caption">{mentor.name}</div>
         <div className="nationality">{mentor.nationality}</div>
         <div className="gradyear"> Class of {mentor.graduation}</div>
-        {/* Should be only max 2 lines, else put ... */}
+        
         <div className="attribute">
           <div className="attribute-icon"><School/></div>
           <div className="attribute-text">{mentor.school}</div>
