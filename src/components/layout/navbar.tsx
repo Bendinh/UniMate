@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
-import "../components/navbar.css";
-import logo from "../assets/unimate_logo.png";
+import "../../styles/navbar.css";
+import logo from "../../assets/unimate_logo.png";
 import { useRef } from 'react';
 import {Menu, AccountCircle} from '@mui/icons-material';
 

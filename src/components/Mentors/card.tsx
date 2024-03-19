@@ -1,4 +1,4 @@
-import './card.css'
+import '../../styles/card.css'
 import { Mentor } from '../../types/mentor'
 import { PopupButton } from "react-calendly";
 import {BusinessCenter, School, Star} from '@mui/icons-material';

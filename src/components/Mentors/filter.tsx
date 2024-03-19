@@ -1,4 +1,4 @@
-import './filter.css'
+import '../../styles/filter.css'
 import { useState } from 'react';
 
 // Card component to display user profile and attributes
