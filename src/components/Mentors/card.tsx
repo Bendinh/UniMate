@@ -1,5 +1,5 @@
 import './card.css'
-import { Mentor } from '../types/mentor'
+import { Mentor } from '../../types/mentor'
 import { PopupButton } from "react-calendly";
 import {BusinessCenter, School, Star} from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';

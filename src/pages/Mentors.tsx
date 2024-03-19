@@ -1,10 +1,10 @@
 import '../pages/mentors.css'
-import Card from '../components/card'
+import Card from '../components/Mentors/card'
 import { useState, useEffect } from "react";
-import { list_mentors } from '../backend/firebase';
+import { list_mentors } from '../services/firebase';
 import { Mentor } from '../types/mentor';
 import { FilterProps } from '../types/filterProps';
-import Filter from '../components/filter';
+import Filter from '../components/Mentors/filter';
 
 
 export const Mentors = () => {
