@@ -30,7 +30,7 @@ function Card() {
         <div className="caption">{mentor.name}</div>
         <div className="nationality">{mentor.nationality}</div>
         <div className="gradyear"> Class of {mentor.graduation}</div>
-        {/* Should be only max 2 lines, else put ... */}
+        
         <div className="attribute">
           <div className="attribute-icon" style={{backgroundImage: 'url("./src/assets/edu.svg")'}}></div>
           <div className="attribute-text">{mentor.school}</div>
@@ -40,7 +40,6 @@ function Card() {
           <div className="attribute-text">{mentor.major}</div>
           </div>
         <div className="attribute">
-          {/* Top two topics only */}
           <div className="attribute-icon" style={{backgroundImage: 'url("./src/assets/topic.svg")'}}></div>
           <div className="attribute-text">{mentor.topics.join(', ')}</div>
           </div>
