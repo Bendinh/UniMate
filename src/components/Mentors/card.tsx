@@ -10,12 +10,13 @@ function Card({mentors}: {mentors: Mentor[]}) {
   const mentorProfile = () =>{
     navigate('/mentorProfile')
   }
+
   return (
   <> 
   <div className = "container">
     {mentors.map((mentor: Mentor) => (
       <div className = "card" key={mentor.id}>
-        <span onClick={mentorProfile}>
+        <span style={{cursor:'pointer'}} onClick={mentorProfile}>
         <div className = "imgframe">
           <img src={mentor.profile_pic != "" ? mentor.profile_pic : "./src/assets/alt_img/no_image.jpg"}></img>
         </div>
