@@ -27,7 +27,7 @@ export const Navbar = () => {
             </div>
             <div className='item login'>
                 <div className='icon'><AccountCircle/></div>
-                LOGIN
+                <Link to='/login'>LOGIN</Link>
             </div>
             <div className='item-v2'>
                 <div className='burger' onClick={openMenu}><Menu/></div>
@@ -38,6 +38,7 @@ export const Navbar = () => {
         <Link to='/'><div className='option' onClick={openMenu}>Home</div></Link>
         <Link to='/mentors'><div className='option' onClick={openMenu}>Mentors</div></Link>
         <Link to='/about'><div className='option' onClick={openMenu}>About</div></Link>
+        <Link to='/login'><div className='option' onClick={openMenu}>Login</div></Link>
     </div>
     </nav>
     </>

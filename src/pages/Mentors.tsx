@@ -1,4 +1,4 @@
-import '../pages/mentors.css'
+import '../styles/mentors.css'
 import Card from '../components/Mentors/card'
 import { useState, useEffect } from "react";
 import { list_mentors } from '../services/firebase';
