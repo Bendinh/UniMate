@@ -1,12 +1,12 @@
 import { Container, Paper, Typography, TextField, Button, Grid, Divider } from '@mui/material';
 import { EmailOutlined, LockOutlined, Google, Facebook } from '@mui/icons-material';
 import {Link} from "react-router-dom";
-import logo from "../assets/logo/unimate_logo.png";
+import logo from "../assets/logo/logoWhite.png";
 
 const Login = () => {
   return (
-    <Container component="main" maxWidth={false} sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', height: '100vh', width: '100vw', backgroundColor: 'white' }}>
-      <Container style={{display: 'flex', flexDirection: 'column', textAlign: 'left', height: '100vh', width: '50vw', backgroundColor: '#00B1D2', borderRadius: '0px 70px 0px 0px'}}>
+    <Container component="main" maxWidth={false} sx={{display: 'flex', flexDirection: 'row', alignItems: 'center', height: '100vh', width: '100vw', backgroundColor: 'blue' }}>
+      <Container sx={{ display: 'flex', flexDirection: 'column', textAlign: 'left', height: '100vh', width: '50vw', backgroundColor: '#00B1D2', borderRadius: '0px 70px 0px 0px'}}>
         <div>
           <Link to='/'><img src={logo} height= '100'/></Link>
         </div>
