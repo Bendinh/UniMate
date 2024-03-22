@@ -4,6 +4,7 @@ import Navbar from './components/layout/navbar.tsx';
 import {Route, Routes} from "react-router-dom"
 import Mentors from './pages/Mentors.tsx';
 import MentorProfile from './pages/MentorProfile.tsx';
+import SignUp1 from './pages/SignUp1.tsx';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/"/>
           <Route path="/mentors" element={<Mentors/>}/>
           <Route path="/mentorProfile" element={<MentorProfile/>}></Route>
+          <Route path="/signup1" element={<SignUp1/>}></Route>
         </Routes>
       </div>
     </>

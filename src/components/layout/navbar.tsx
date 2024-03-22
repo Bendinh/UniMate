@@ -23,7 +23,7 @@ export const Navbar = () => {
             <div className='item tablist'>
                 <div className='tab'><Link to='/home'>HOME</Link></div>
                 <div className='tab'><Link to='/mentors'>MENTORS</Link></div>
-                <div className='tab'><Link to='/about'>ABOUT</Link></div>
+                <div className='tab'><Link to='/signup1'>SIGN UP</Link></div>
             </div>
             <div className='item login'>
                 <div className='icon'><AccountCircle/></div>
@@ -37,7 +37,7 @@ export const Navbar = () => {
         <div className='menu' ref={menu}>
         <Link to='/'><div className='option' onClick={openMenu}>Home</div></Link>
         <Link to='/mentors'><div className='option' onClick={openMenu}>Mentors</div></Link>
-        <Link to='/about'><div className='option' onClick={openMenu}>About</div></Link>
+        <Link to='/signup1'><div className='option' onClick={openMenu}>Sign Up</div></Link>
     </div>
     </nav>
     </>
