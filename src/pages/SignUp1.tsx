@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Container, TextField, Button, Typography, Avatar, CssBaseline, IconButton } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const SignUp1 = () => {
   // Function to handle file selection for upload photo
@@ -364,6 +365,8 @@ const SignUp1 = () => {
             />
             <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
                 <Button
+                    component={Link}
+                    to="/signup2"
                     type="submit"
                     variant="contained"
                     color="primary"
