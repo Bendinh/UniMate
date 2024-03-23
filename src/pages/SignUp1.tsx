@@ -101,8 +101,20 @@ const SignUp1 = () => {
             </Typography>
             <IconButton color="primary" aria-label="upload picture" component="label">
             <input hidden accept="image/*" type="file" onChange={handleFileSelect} />
-            <Avatar style={{ margin: '8px', backgroundColor: 'secondary.main' }}>
-            </Avatar>
+            <div style={{ position: 'relative', display: 'inline-block' }}>
+                <Avatar style={{ width: '113px', height: '113px', flexShrink: 0, margin: '8px', backgroundColor: 'transparent' }}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="113" height="113" viewBox="0 0 113 113" fill="none">
+                    <path d="M56.5001 9.4165C30.5101 9.4165 9.41675 30.5098 9.41675 56.4998C9.41675 82.4898 30.5101 103.583 56.5001 103.583C82.4901 103.583 103.583 82.4898 103.583 56.4998C103.583 30.5098 82.4901 9.4165 56.5001 9.4165ZM56.5001 28.2498C65.5872 28.2498 72.9793 35.6419 72.9793 44.729C72.9793 53.8161 65.5872 61.2082 56.5001 61.2082C47.413 61.2082 40.0209 53.8161 40.0209 44.729C40.0209 35.6419 47.413 28.2498 56.5001 28.2498ZM56.5001 94.1665C46.9422 94.1665 35.6422 90.3057 27.5909 80.6065C35.548 74.3915 45.5767 70.6248 56.5001 70.6248C67.4234 70.6248 77.4522 74.3915 85.4092 80.6065C77.358 90.3057 66.058 94.1665 56.5001 94.1665Z" fill="#777777"/>
+                </svg>
+                </Avatar>
+                <div style={{ position: 'absolute', bottom: '8px', right: '8px' }}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <circle cx="20" cy="20" r="20" fill="#E0E0E0"/>
+                    <path d="M15.4063 26.7399L13.8549 25.1885L25.6885 13.3549L27.2399 14.9063L15.4063 26.7399ZM17.3549 28.6885L27.2399 18.8035L28.7913 20.3549L18.9063 30.2399H17.3549V28.6885Z" fill="black"/>
+                    <path d="M27.9646 10.3281C27.365 9.72851 26.381 9.72851 25.7814 10.3281L24.2814 11.8281L29.7814 17.3281L31.2814 15.8281C31.8809 15.2285 31.8809 14.2446 31.2814 13.645L27.9646 10.3281Z" fill="black"/>
+                </svg>
+                </div>
+            </div>
             <Typography sx={{
                 color: '#00B1D2',
                 fontFamily: 'Arial',
@@ -110,7 +122,7 @@ const SignUp1 = () => {
                 fontStyle: 'normal',
                 fontWeight: '500',
                 lineHeight: 'normal',
-                textAlign: 'left'
+                textAlign: 'left',
             }} display = "inline">
                 Upload a profile photo
                 <Typography sx={{
@@ -120,7 +132,7 @@ const SignUp1 = () => {
                     fontStyle: 'normal',
                     fontWeight: '400',
                     lineHeight: 'normal',
-                    textAlign: 'left'
+                    textAlign: 'left',
                 }}>
                 Accepts all image types(Optional but recommended). You can always edit later.
                 </Typography>
@@ -242,7 +254,7 @@ const SignUp1 = () => {
                 margin="normal"
                 fullWidth
                 id="gender"
-                label="Select your gender"
+                label="Select your preferred gender"
                 name="gender"
                 select
                 SelectProps={{
@@ -350,21 +362,23 @@ const SignUp1 = () => {
                 error={!!phoneNumberError}
                 helperText={phoneNumberError ? 'Please input a valid phone number!' : ''}
             />
-            <Button
-                type="submit"
-                variant="contained"
-                color="primary"
-                style={{ 
-                    width: '160px',
-                    height: '45px',
-                    flexShrink: '0',
-                    borderRadius: '60px',
-                    background: 'linear-gradient(100deg, #00B1D2 -5.85%, #5038ED 109.55%)',
-                    boxShadow: '0px 8px 21px 0px rgba(0, 0, 0, 0.16)',
-                }}
-            >
-                Next
-            </Button>
+            <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                <Button
+                    type="submit"
+                    variant="contained"
+                    color="primary"
+                    style={{ 
+                        width: '160px',
+                        height: '45px',
+                        flexShrink: '0',
+                        borderRadius: '60px',
+                        background: 'linear-gradient(100deg, #00B1D2 -5.85%, #5038ED 109.55%)',
+                        boxShadow: '0px 8px 21px 0px rgba(0, 0, 0, 0.16)',
+                    }}
+                >
+                    Next
+                </Button>
+            </div>
             </form>
         </div>
         </Container>
