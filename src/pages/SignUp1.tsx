@@ -1,11 +1,78 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, TextField, Button, Typography, Avatar, CssBaseline, IconButton } from '@mui/material';
 
 const SignUp1 = () => {
-// Function to handle file selection
+  // Function to handle file selection for upload photo
   const handleFileSelect = () => {
     // Process the file here (e.g., setting state or uploading)
   };
+ 
+  // Function to validate date format
+  const [dateOfBirth, setDateOfBirth] = useState('');
+  const [isValid, setIsValid] = useState(true);
+
+  const handleChange = (event) => {
+    const inputDate = event.target.value;
+    // Regular expression to match DD/MM/YYYY format
+    const regex = /^(0[1-9]|[1-2][0-9]|3[0-1])\/(0[1-9]|1[0-2])\/\d{4}$/;
+    setIsValid(regex.test(inputDate));
+    setDateOfBirth(inputDate);
+  };
+
+
+  // Function to validate name input
+  const [fullName, setFullName] = useState('');
+  const [error, setError] = useState(false);
+
+  const handleFullNameChange = (event) => {
+    const inputFullName = event.target.value;
+    setFullName(inputFullName);
+    const validFullName = /^[a-zA-Z ]+$/.test(inputFullName);
+    setError(!validFullName);
+  };
+
+  // Function to validate school name
+  const [schoolName, setSchoolName] = useState('');
+  const [errorSchool, setErrorSchool] = useState(false);
+
+  const handleSchoolNameChange = (event) => {
+    const inputSchoolName = event.target.value;
+    setSchoolName(inputSchoolName);
+    const validSchoolName = /^[a-zA-Z ]+$/.test(inputSchoolName);
+    setErrorSchool(!validSchoolName);
+  };
+
+  // Function to validate phone number
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [phoneNumberError, setPhoneNumberError] = useState('');
+
+  const validatePhoneNumber = (value) => {
+    const phoneNumberPattern = /^\d{10}$/; // Assuming 10-digit phone number
+    if (!phoneNumberPattern.test(value)) {
+        setPhoneNumberError('Please input a valid phone number!');
+        return false;
+    } else {
+        setPhoneNumberError('');
+        return true;
+    }
+  };
+
+  const handlePhoneChange = (event) => {
+    const { value } = event.target;
+    setPhoneNumber(value);
+    validatePhoneNumber(value);
+  };
+
+  // Function to ensure user selected gender
+  const [gender, setGender] = useState('');
+  const [genderError, setGenderError] = useState('');
+
+  const handleGenderChange = (event) => {
+    const selectedGender = event.target.value;
+    setGender(selectedGender);
+    setGenderError(selectedGender ? '' : 'Please select a gender');
+  };
+  
   return (
     <Container component="main" maxWidth={false} sx={{display: 'flex', flexDirection: 'row', alignItems: 'center', height: '100vh', width: '100vw', backgroundColor: 'white', paddingLeft: '0 !important' }}>
         <Container maxWidth="xs" sx={{backgroundColor: "white"}}>
@@ -93,9 +160,17 @@ const SignUp1 = () => {
                     style: {
                       borderRadius: "40px",
                       border: "1px solid #D0D0D0"
+                    },
+                    inputProps: {
+                        pattern: "[a-zA-Z ]+",
+                        title: "Full name can only contain alphabets and spaces"
                     }
                 }}
                 autoFocus
+                value={fullName}
+                onChange={handleFullNameChange}
+                error={error}
+                helperText={error ? 'Please input your full name!' : ''}
             />
             <Typography variant="subtitle1" sx={{
                 textAlign: "left",
@@ -125,16 +200,21 @@ const SignUp1 = () => {
                 id="dateOfBirth"
                 placeholder="Enter in [DD/MM/YYYY] format"
                 name="dateOfBirth"
-                type="date"
+                type="text"
                 InputLabelProps={{ 
                     shrink: true 
                 }}
                 InputProps={{
                     style: {
                       borderRadius: "40px",
-                      border: "1px solid #D0D0D0"
+                      border: "1px solid #D0D0D0",
+                      borderColor: isValid ? "#D0D0D0" : "#F44336", // Change border color based on validation
                     }
                 }}
+                error={!isValid} // Show error if date is invalid
+                helperText={!isValid ? "Please enter a valid format!" : ""}
+                value={dateOfBirth}
+                onChange={handleChange}
             />
             <Typography variant="subtitle1" sx={{
                 textAlign: "left",
@@ -174,11 +254,17 @@ const SignUp1 = () => {
                       border: "1px solid #D0D0D0"
                     }
                 }}
+                value={gender}
+                onChange={handleGenderChange}
+                error={!!genderError}
+                helperText={genderError}
             >
                 <option aria-label="None" value="" />
                 <option value="male">Male</option>
                 <option value="female">Female</option>
-                <option value="other">Other</option>
+                <option value="nonbinary">Nonbinary</option>
+                <option value="selfdescribe">Self Describe</option>
+                <option value="prefernottoanswer">Prefer not to answer</option>
             </TextField>
             <Typography variant="subtitle1" sx={{
                 textAlign: "left",
@@ -213,8 +299,16 @@ const SignUp1 = () => {
                     style: {
                       borderRadius: "40px",
                       border: "1px solid #D0D0D0"
+                    },
+                    inputProps: {
+                        pattern: "[a-zA-Z ]+",
+                        title: "School name can only contain alphabets and spaces"
                     }
                 }}
+                value={schoolName}
+                onChange={handleSchoolNameChange}
+                error={errorSchool}
+                helperText={errorSchool ? 'Please input your current school!' : ''}
             />
             <Typography variant="subtitle1" sx={{
                 textAlign: "left",
@@ -242,7 +336,7 @@ const SignUp1 = () => {
                 margin="normal"
                 fullWidth
                 id="phone"
-                label="Enter your phone number"
+                placeholder="Enter your phone number"
                 name="phone"
                 autoComplete="tel"
                 InputProps={{
@@ -251,6 +345,10 @@ const SignUp1 = () => {
                       border: "1px solid #D0D0D0"
                     }
                 }}
+                value={phoneNumber}
+                onChange={handlePhoneChange}
+                error={!!phoneNumberError}
+                helperText={phoneNumberError ? 'Please input a valid phone number!' : ''}
             />
             <Button
                 type="submit"
