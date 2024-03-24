@@ -4,7 +4,7 @@ import {Star} from '@mui/icons-material';
 import { get_mentor } from '../../services/firebase';
 import { useParams } from 'react-router-dom';
 import { Mentor } from '../../types/mentor';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { PopupButton } from "react-calendly";
 
 function Overview() {
@@ -29,7 +29,7 @@ function Overview() {
             <div className='background'></div>
             <div className='container'>
                 <div className='col'>
-                    <img src={mentor.profile_pic}></img>
+                    <img src={mentor?.profile_pic}></img>
                 </div>
 
                 <div className='col info'>
