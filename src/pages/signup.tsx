@@ -138,13 +138,13 @@ export const SignUp = () => {
               boxShadow: '0px 8px 21px 0px rgba(0, 0, 0, 0.16)'
             }}
           >
-            Continue
+            Continue with Email
           </Button>
           </form>
           <Grid container justifyContent="center">
             <Grid item>
               <Button size="small" sx={{color: '#00B1D2'}}>
-                Already have an account? Log in
+                <Link style={{color: '#00B1D2'}}to="/login">Already have an account? Log in</Link>
               </Button>
             </Grid>
           </Grid>
