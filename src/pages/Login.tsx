@@ -1,12 +1,24 @@
-import { Container, Paper, Typography, TextField, Button, Grid, Divider } from '@mui/material';
-import { EmailOutlined, LockOutlined, Google, Facebook } from '@mui/icons-material';
+import { Container, Typography, TextField, Button, Grid, Divider } from '@mui/material';
+import { EmailOutlined, LockOutlined, Google } from '@mui/icons-material';
 import {Link} from "react-router-dom";
 import logo from "../assets/logo/logoWhite.png";
 
 const Login = () => {
   return (
-    <Container component="main" maxWidth={false} sx={{display: 'flex', flexDirection: 'row', alignItems: 'center', height: '100vh', width: '100vw', backgroundColor: 'blue' }}>
-      <Container sx={{ display: 'flex', flexDirection: 'column', textAlign: 'left', height: '100vh', width: '50vw', backgroundColor: '#00B1D2', borderRadius: '0px 70px 0px 0px'}}>
+    <Container component="main" maxWidth={false} sx={{display: 'flex', flexDirection: 'row', alignItems: 'center', height: '100vh', width: '100vw', backgroundColor: 'white', paddingLeft: '0 !important' }}>
+      <Container  maxWidth={false} sx={{ 
+        display: 'flex', 
+        flexDirection: 'column', 
+        textAlign: 'left', 
+        height: '100vh', 
+        width: '50vw', 
+        background: 'linear-gradient(100deg, #00B1D2 -5.85%, #5038ED 109.55%)', 
+        borderRadius: '0px 70px 0px 0px',
+        // backgroundImage: `url(${loginBackground})`, 
+        // backgroundSize: 'cover', 
+        // backgroundPosition: 'center',
+        // backgroundRepeat: 'no-repeat',
+      }}>
         <div>
           <Link to='/'><img src={logo} height= '100'/></Link>
         </div>
@@ -16,7 +28,7 @@ const Login = () => {
       </Container>
 
       <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100vh', width: '70vw', justifyContent: 'center'}}>
-      <Paper elevation={3} sx={{ padding: 4, width: '100%', maxWidth: 400 }}>
+      <Container sx={{ padding: 4, maxWidth: 200, width: '50%' }}>
         <Typography variant="h5" component="h1" gutterBottom sx={{textAlign: 'left', color: '#00B1D2', fontSize: '32px', fontWeight: '700'}}>
           Login
         </Typography>
@@ -28,11 +40,16 @@ const Login = () => {
           required
           fullWidth
           id="email"
-          label="Email or Phone"
           name="email"
           autoComplete="email"
+          placeholder='Email'
           autoFocus
           InputProps={{
+            style: {
+              borderRadius: '50px',
+              border: '1px solid #00B1D2',
+              background: '#F2FDFF'
+            },
             startAdornment: (
               <EmailOutlined sx={{ marginRight: '8px' }} />
             ),
@@ -43,15 +60,16 @@ const Login = () => {
           required
           fullWidth
           name="password"
-          label="Password"
           type="password"
           id="password"
           autoComplete="current-password"
-          sx={{
-            borderRadius: '50px',
-            /*??????????????????????????????/*/ 
-          }}
+          placeholder='Password'
           InputProps={{
+            style: {
+              borderRadius: '50px',
+              border: '1px solid #00B1D2',
+              background: '#F2FDFF'
+            },
             startAdornment: (
               <LockOutlined sx={{ marginRight: '8px' }} />
             ),
@@ -85,7 +103,7 @@ const Login = () => {
             </Button>
           </Grid>
         </Grid>
-        <Divider sx={{ my: 3 }}>Login with Others</Divider>
+        <Divider sx={{ my: 3, color: '#777' }}>Continue with Others</Divider>
         <Grid container spacing={2}>
           <Grid item xs={6}>
             <Button variant="outlined" startIcon={<Google />} fullWidth 
@@ -94,15 +112,15 @@ const Login = () => {
               Continue with Google
             </Button>
           </Grid>
-          <Grid item xs={6}>
+          {/* <Grid item xs={6}>
             <Button variant="outlined" startIcon={<Facebook />} fullWidth 
               sx={{borderRadius: '50px', border: '1px solid #D9D9D9', fontSize: '14px', fontWeight: '400', color: '#777'}}
             >
               Continue with Facebook
             </Button>
-          </Grid>
+          </Grid> */}
         </Grid>
-      </Paper>
+      </Container>
       </div>
     </Container>
   );
