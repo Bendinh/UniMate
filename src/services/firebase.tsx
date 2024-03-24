@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore, getDocs, collection, doc, setDoc, query, where } from "firebase/firestore";
-import { getAuth } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, FacebookAuthProvider} from "firebase/auth";
 import { get } from "firebase/database";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -24,6 +24,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
 
 export const list_mentors = async (filters: {topic?: string, major?: string, nationality?: string, school?: string} = {})=> {
     let q = query(collection(db, 'mentors'));
@@ -46,7 +47,7 @@ export const list_mentors = async (filters: {topic?: string, major?: string, nat
     return data
 }
 
-export {auth}
+export {auth, provider}
 // TODO: upload new mentor
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const new_mentor = async(data: any) => {

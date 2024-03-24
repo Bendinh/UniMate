@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import "../pages/signup.css";
 import WhiteLogo from "../assets/WhiteUniMate.png"
-import {auth} from "../services/firebase"
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import {auth, GGprovider, FBprovider} from "../services/firebase"
+import { createUserWithEmailAndPassword,GoogleAuthProvider, FacebookAuthProvider, signInWithPopup } from 'firebase/auth';
 import { Container, Paper, Typography, TextField, Button, Grid, Divider } from '@mui/material';
 import { EmailOutlined, LockOutlined, Google, Facebook } from '@mui/icons-material';
 import {Link} from "react-router-dom";
@@ -21,6 +21,51 @@ export const SignUp = () => {
             console.log(error)
         });
     };
+
+    const GoogleSignIn = () => {
+        signInWithPopup(auth, GGprovider)
+        .then((result) => {
+        console.log(result);
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential?.accessToken;
+        // The signed-in user info.
+        const user = result.user;
+        // IdP data available using getAdditionalUserInfo(result)
+        // ...
+        }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        // ...
+        });
+    }
+
+    const FacebookSignIn = () => {
+        signInWithPopup(auth, FBprovider)
+        .then((result) => {
+        // The signed-in user info.
+        const user = result.user;
+        // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+        const credential = FacebookAuthProvider.credentialFromResult(result);
+        const accessToken = credential?.accessToken;
+    // IdP data available using getAdditionalUserInfo(result)
+        })
+        .catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = FacebookAuthProvider.credentialFromError(error);
+        });
+    }
+
     return (
         <Container component="main" maxWidth={false} sx={{padding: 0,display: 'flex', flexDirection: 'row', alignItems: 'center', height: '100vh', width: '100vw', background: 'white' }}>
         <Container sx={{display: 'flex', flexDirection: 'column', textAlign: 'left', height: '100vh', width: '50vw', background: 'linear-gradient(100deg, #00B1D2 5.85%, #5038ED 109.55%)', borderRadius: '0px 70px 0px 0px'}}>
@@ -50,12 +95,12 @@ export const SignUp = () => {
             placeholder='Enter your email address (ex: 123@gmail.com)'
             onChange={(e) => setEmail(e.currentTarget.value)}
             name="email"
-            sx={{
-                borderRadius: '50px'
-              }}
             autoComplete="email"
             autoFocus
             InputProps={{
+              style: {
+                borderRadius: '40px'
+              },
               startAdornment: (
                 <EmailOutlined sx={{ marginRight: '8px' }} />
               ),
@@ -72,10 +117,10 @@ export const SignUp = () => {
             id="password"
             placeholder='Enter your password'
             autoComplete="current-password"
-            sx={{
-              borderRadius: '50px'
-            }}
             InputProps={{
+              style: {
+                borderRadius: '40px'
+              },
               startAdornment: (
                 <LockOutlined sx={{ marginRight: '8px' }} />
               ),
@@ -111,14 +156,14 @@ export const SignUp = () => {
           <Divider sx={{ my: 3 }}>Continue with Others</Divider>
           <Grid container spacing={2}>
             <Grid item xs={6}>
-              <Button variant="outlined" startIcon={<Google />} fullWidth 
+              <Button onClick={GoogleSignIn} variant="outlined" startIcon={<Google />} fullWidth 
                 sx={{borderRadius: '50px', border: '1px solid #D9D9D9', fontSize: '14px', fontWeight: '400', color: '#777'}}
-              >
+            >
                 Continue with Google
               </Button>
             </Grid>
             <Grid item xs={6}>
-              <Button variant="outlined" startIcon={<Facebook />} fullWidth 
+              <Button onClick={FacebookSignIn} variant="outlined" startIcon={<Facebook />} fullWidth 
                 sx={{borderRadius: '50px', border: '1px solid #D9D9D9', fontSize: '14px', fontWeight: '400', color: '#777'}}
               >
                 Continue with Facebook
