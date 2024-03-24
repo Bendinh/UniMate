@@ -68,7 +68,7 @@ export const SignUp = () => {
 
     return (
         <Container component="main" maxWidth={false} sx={{font: 'Montserrat',position: 'absolute',paddingLeft: '0 !important',display: 'flex', flexDirection: 'row', alignItems: 'center', height: '100vh', width: '100vw', background: 'white' }}>
-        <Container sx={{display: 'flex', flexDirection: 'column', textAlign: 'left', height: '100vh', width: '50vw', background: 'linear-gradient(100deg, #00B1D2 5.85%, #5038ED 109.55%)', borderRadius: '0px 70px 0px 0px'}}>
+        <Container sx={{display: 'flex', flexDirection: 'column', textAlign: 'left', height: '100vh', width: '40vw', background: 'linear-gradient(100deg, #00B1D2 5.85%, #5038ED 109.55%)', borderRadius: '0px 70px 0px 0px'}}>
           <div>
             <Link to='/'><img src={WhiteLogo} height= '100'/></Link>
           </div>
