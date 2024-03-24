@@ -2,7 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, FacebookAuthProvider} from "firebase/auth";
 import { get } from "firebase/database";
-import { getFirestore, getDocs, getDoc,  collection, doc, setDoc, query, where } from "firebase/firestore";
+import { getFirestore, getDocs, getDoc,  collection, doc, query, where } from "firebase/firestore";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries

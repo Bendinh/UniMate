@@ -8,4 +8,5 @@ export interface Mentor {
     major: string;
     topics: string[];
     bookingLink: string;
+    description: string;
 }
