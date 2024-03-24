@@ -67,18 +67,18 @@ export const SignUp = () => {
     }
 
     return (
-        <Container component="main" maxWidth={false} sx={{padding: 0,display: 'flex', flexDirection: 'row', alignItems: 'center', height: '100vh', width: '100vw', background: 'white' }}>
+        <Container component="main" maxWidth={false} sx={{font: 'Montserrat',position: 'absolute',paddingLeft: '0 !important',display: 'flex', flexDirection: 'row', alignItems: 'center', height: '100vh', width: '100vw', background: 'white' }}>
         <Container sx={{display: 'flex', flexDirection: 'column', textAlign: 'left', height: '100vh', width: '50vw', background: 'linear-gradient(100deg, #00B1D2 5.85%, #5038ED 109.55%)', borderRadius: '0px 70px 0px 0px'}}>
           <div>
             <Link to='/'><img src={WhiteLogo} height= '100'/></Link>
           </div>
-          <div style={{color: 'white', fontSize: '36px', fontWeight: '600'}}>
+          <div style={{marginLeft: '4%',color: 'white', fontSize: '36px', fontWeight: '600'}}>
             Welcome to UniMate 
           </div>
         </Container>
   
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100vh', width: '70vw', justifyContent: 'center'}}>
-        <Paper elevation={3} sx={{ padding: 4, width: '100%', maxWidth: 400 }}>
+        <Paper elevation={0} sx={{ padding: 4, width: '100%', maxWidth: 400 }}>
           <Typography variant="h5" component="h1" gutterBottom sx={{textAlign: 'left', color: '#00B1D2', fontSize: '32px', fontWeight: '700'}}>
             Join UniMate Today!
           </Typography>
@@ -154,14 +154,15 @@ export const SignUp = () => {
             </Grid>
           </Grid>
           <Divider sx={{ my: 3 }}>Continue with Others</Divider>
-          <Grid container spacing={2}>
-            <Grid item xs={6}>
+          <Grid justifyContent="center" container spacing={2}>
+            <Grid item xs={8}>
               <Button onClick={GoogleSignIn} variant="outlined" startIcon={<Google />} fullWidth 
                 sx={{borderRadius: '50px', border: '1px solid #D9D9D9', fontSize: '14px', fontWeight: '400', color: '#777'}}
             >
                 Continue with Google
               </Button>
             </Grid>
+            {/*
             <Grid item xs={6}>
               <Button onClick={FacebookSignIn} variant="outlined" startIcon={<Facebook />} fullWidth 
                 sx={{borderRadius: '50px', border: '1px solid #D9D9D9', fontSize: '14px', fontWeight: '400', color: '#777'}}
@@ -169,6 +170,7 @@ export const SignUp = () => {
                 Continue with Facebook
               </Button>
             </Grid>
+            */}
           </Grid>
         </Paper>
         </div>
