@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore, getDocs, collection, doc, setDoc, query, where } from "firebase/firestore";
-
+import { getAuth, GoogleAuthProvider, FacebookAuthProvider} from "firebase/auth";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -22,6 +22,9 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const auth = getAuth(app);
+const GGprovider = new GoogleAuthProvider();
+const FBprovider = new FacebookAuthProvider();
 
 export const list_mentors = async (filters: {topic?: string, major?: string, nationality?: string, school?: string} = {})=> {
     let q = query(collection(db, 'mentors'));
@@ -44,7 +47,7 @@ export const list_mentors = async (filters: {topic?: string, major?: string, nat
     return data
 }
 
-
+export {auth, GGprovider, FBprovider}
 // TODO: upload new mentor
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const new_mentor = async(data: any) => {
@@ -55,4 +58,3 @@ export const new_mentor = async(data: any) => {
     console.log("can't upload doc")
   }
 }
-

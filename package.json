@@ -16,7 +16,7 @@
     "@mui/joy": "^5.0.0-beta.28",
     "@mui/material": "^5.15.11",
     "@mui/styled-engine": "^5.15.11",
-    "firebase": "^10.8.1",
+    "firebase": "^10.9.0",
     "mui": "^0.0.1",
     "react": "^18.2.0",
     "react-calendly": "^4.3.0",
