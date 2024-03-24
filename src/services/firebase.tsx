@@ -1,8 +1,9 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, getDocs, collection, doc, setDoc, query, where } from "firebase/firestore";
 import { getAuth, GoogleAuthProvider, FacebookAuthProvider} from "firebase/auth";
 import { get } from "firebase/database";
+import { getFirestore, getDocs, getDoc,  collection, doc, setDoc, query, where } from "firebase/firestore";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -51,12 +52,11 @@ export const list_mentors = async (filters: {topic?: string, major?: string, nat
 export {auth, GGprovider, FBprovider}
 // TODO: upload new mentor
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const new_mentor = async(data: any) => {
-  try {
-   const mentorsRef = collection(db, 'mentors');
-   await setDoc(doc(mentorsRef), data)
-  }catch(error){
-    console.log("can't upload doc")
-  }
+export const get_mentor = async(id: string) => {
+  const mentorRef = doc(db, 'mentors', id);
+  const mentor = await getDoc(mentorRef)
+
+  return mentor.data()
+  
 }
 

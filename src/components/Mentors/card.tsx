@@ -6,17 +6,19 @@ import { useNavigate } from 'react-router-dom';
 
 // Card component to display user profile and attributes
 function Card({mentors}: {mentors: Mentor[]}) {
+  
   const navigate = useNavigate();
-  const mentorProfile = () =>{
-    navigate('/mentorProfile')
+  
+  const mentorProfile = (mentor:string) =>{
+    navigate(`/mentorProfile/${mentor}`)
   }
 
   return (
   <> 
-  <div className = "container">
+  <div className = "container-card">
     {mentors.map((mentor: Mentor) => (
       <div className = "card" key={mentor.id}>
-        <span style={{cursor:'pointer'}} onClick={mentorProfile}>
+        <span style={{cursor:'pointer'}} onClick={() => mentorProfile(mentor.id)}>
         <div className = "imgframe">
           <img src={mentor.profile_pic != "" ? mentor.profile_pic : "./src/assets/alt_img/no_image.jpg"}></img>
         </div>

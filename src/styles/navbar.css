@@ -4,7 +4,7 @@ nav {
     width: 100%;
     background-color: white;
     z-index: 1001;
-}
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;}
 
 nav .nav-container a{
     color: #777;
