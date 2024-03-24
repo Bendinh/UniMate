@@ -1,9 +1,10 @@
 import './App.css'
-import './backend/firebase'
-import Navbar from './components/navbar.tsx';
+import './services/firebase.tsx'
+import Navbar from './components/layout/navbar.tsx';
 import {Route, Routes} from "react-router-dom"
-import {Mentors} from "./pages/Mentors.tsx"
-import { CreateAcc } from "./pages/createAcc.tsx";
+import Mentors from './pages/Mentors.tsx';
+import MentorProfile from './pages/MentorProfile.tsx';
+import SignUp from './pages/signUp.tsx';
 
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
         <Routes>
           <Route path="/"/>
           <Route path="/mentors" element={<Mentors/>}/>
-          <Route path="/createAccount" element={<CreateAcc/>}/>
+          <Route path="/signup" element={<SignUp/>}/>
+          <Route path="/mentorProfile" element={<MentorProfile/>}></Route>
         </Routes>
       </div>
     </>

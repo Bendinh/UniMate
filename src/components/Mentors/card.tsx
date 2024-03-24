@@ -1,5 +1,5 @@
-import './card.css'
-import { Mentor } from '../types/mentor'
+import '../../styles/card.css'
+import { Mentor } from '../../types/mentor'
 import { PopupButton } from "react-calendly";
 import {BusinessCenter, School, Star} from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
@@ -10,12 +10,13 @@ function Card({mentors}: {mentors: Mentor[]}) {
   const mentorProfile = () =>{
     navigate('/mentorProfile')
   }
+
   return (
   <> 
   <div className = "container">
     {mentors.map((mentor: Mentor) => (
       <div className = "card" key={mentor.id}>
-        <span onClick={mentorProfile}>
+        <span style={{cursor:'pointer'}} onClick={mentorProfile}>
         <div className = "imgframe">
           <img src={mentor.profile_pic != "" ? mentor.profile_pic : "./src/assets/alt_img/no_image.jpg"}></img>
         </div>
@@ -23,7 +24,7 @@ function Card({mentors}: {mentors: Mentor[]}) {
         <div className="caption">{mentor.name}</div>
         <div className="nationality">{mentor.nationality}</div>
         <div className="gradyear"> Class of {mentor.graduation}</div>
-        {/* Should be only max 2 lines, else put ... */}
+        
         <div className="attribute">
           <div className="attribute-icon"><School/></div>
           <div className="attribute-text">{mentor.school}</div>
