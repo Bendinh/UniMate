@@ -77,7 +77,7 @@
 
 .review .review-col .rating .full-circle{
     display: inline-block;
-    background-image: url('./src/assets/full_circle.svg');
+    background-image: url('../src/assets/full_circle.svg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -90,7 +90,7 @@
 }
 
 .review .review-col .rating .full-circle.empty{
-    background-image: url('./src/assets/empty_circle.svg');
+    background-image: url('../src/assets/empty_circle.svg');
 }
 
 .review .review-col .date{

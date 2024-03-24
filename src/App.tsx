@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route path="/"/>
           <Route path="/mentors" element={<Mentors/>}/>
-          <Route path="/mentorProfile" element={<MentorProfile/>}></Route>
+          <Route path="/mentorProfile/:mentorID" element={<MentorProfile/>}></Route>
         </Routes>
       </div>
     </>

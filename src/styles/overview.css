@@ -1,117 +1,159 @@
-/* Too many classes =(((((*/
-.foreground{
-    padding-bottom: 5%;
-    background: linear-gradient(180deg, #00B1D2 0%, rgba(0, 35, 156, 0.80) 118.22%);
+.profile{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    color: black;
+    top: 0;
+    margin: 0 0;
+}
+
+.profile .background{
     position: absolute;
     width: 100%;
+    height:90px;
+    background: linear-gradient(180deg, #00B1D2 0%, rgba(0, 35, 156, 0.80) 118.22%);
 }
 
-.emptySpace{
-    padding-bottom: 10%;
+.profile .container{
     position: relative;
-}
-
-.main{
-    background-color: white;
+    max-width: 1400px;
+    width: 100%;
+    height: 100px;
+    height: fit-content;
+    margin: 0 auto;
     text-align: left;
-    padding-bottom: 100%; 
-    color: black;
-    position: relative;
+    padding-top: 50px;
 }
 
-.profile{
-    max-width: 92%;
+.profile .container .col{
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
+
+.profile .container .col.info{
     margin-left: 4%;
-    margin-right: 4%;
+    margin-top: 4%;
 }
 
-.generalInfo{
-    padding-bottom: 5%;
-    display: inline-block;
-    margin-top: 3%;
-}
-
-.generalInfo .button.profile-button{
-    position: absolute;
-    right: 100px;
-}
-
-.pfp img{
-    max-width: 30%;
-    position:relative;
-    float: left;
-    position: relative;
-    border-radius: 5%;
-    background-color: white;
-    padding: 10px 10px;
-}
-
-.attributes{
-    line-height: 130%;
-    width: 30%;
-    position: relative;
-    float: left;
-    color: black;
-    margin-left: 5%;
-}
-
-.attributes .name{
-    font-weight: bold;
-    font-size: 150%;
-}
-
-.education{
-    padding-top: 12%;
-}
-
-.education .logo img{
-    position:relative;
-    float: left;
-    padding-right: 7%;
-}
-
-.education .eduinfo{
-    position: relative;
-    float: left;
-    font-size: small;
-}
-
-.education .eduinfo .school{
-    font-weight: bold;
-}
-
-.profileOverview{
-    padding-bottom: 5%;
-}
-.profileOverview .title{
-    color: #00239C;
-    font-weight: bold;   
-    font-size: 20px;
-    border-bottom:1px solid #00B1D2;
-    padding-bottom:1px;
-}
-
-.description{
-    max-width: 50%;
-    display: inline-block;
-    position:relative;
-    text-wrap: left;
-}
-
-.topics{
-    width: 30%;
-    position: relative;
+.profile .container .col.bttn{
+    cursor: pointer;
+    border-radius: 20px;
+    background: #00B1D2;
+    color: white;
+    padding: 3px 20px;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.2s;
     float: right;
+    margin-top: 100px;
 }
 
-.reviews{
-    padding-bottom: 5%;
+.profile .container .col.bttn:hover{
+    background: black;
+    transition: all 0.2s;
 }
 
-.reviews .title{
+
+.profile .container .col img{
+    background-color: white;
+    padding: 8px;
+    border-radius: 15px;
+    object-fit: cover;
+    object-position: center;
+    width: 200px;
+    height: 200px;
+}
+
+.profile .container .col .attribute{
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+}
+
+.profile .container .col .attribute.name{
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 32px;
+    letter-spacing: 0.5px;
+    margin-bottom: 6%;
+}
+
+.profile .container .col .attribute.major{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.5px;
+    margin-bottom: 6%;
+}
+
+.profile .container .col .attribute .sub{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.profile .container .col .attribute .sub img{
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    padding: 0 0;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+
+.profile .container .col .attribute .sub .text{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    padding-left: 10px;
+}
+
+.profile .container .header{
+    border-bottom: 1px solid #00B1D2;
+}
+
+.profile .container .header h3{
+    margin: 0 0;
     color: #00239C;
-    font-weight: bold;   
-    font-size: 20px;
-    border-bottom:1px solid #00B1D2;
-    padding-bottom:1px;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 32px;
+    letter-spacing: 0.5px;
+    width: fit-content;
+    border-bottom: 2px solid #00239C;
+}
+
+.profile .container .col.description{
+    position: relative;
+    width: 48%;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0.5px;
+    vertical-align: top;
+    margin-top: 25px;
+    
+}
+
+.profile .container .col.description .show{
+    margin-top: 10px;
+    color: #00B1D2;
+    cursor: pointer;
+}
+
+.profile .container .col.topics{
+    text-align: center;
+    width: 48%;
+    vertical-align: top;
+    margin-top: 25px;
 }
