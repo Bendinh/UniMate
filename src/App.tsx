@@ -4,7 +4,7 @@ import Navbar from './components/layout/navbar.tsx';
 import {Route, Routes} from "react-router-dom"
 import Mentors from './pages/Mentors.tsx';
 import MentorProfile from './pages/MentorProfile.tsx';
-import SignUp from './pages/signUp.tsx';
+import SignUp from './pages/signup.tsx';
 
 
 function App() {
