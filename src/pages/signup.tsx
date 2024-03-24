@@ -99,7 +99,8 @@ export const SignUp = () => {
             autoFocus
             InputProps={{
               style: {
-                borderRadius: '40px'
+                borderRadius: '40px',
+                background: '#F2FDFF'
               },
               startAdornment: (
                 <EmailOutlined sx={{ marginRight: '8px' }} />
@@ -119,7 +120,8 @@ export const SignUp = () => {
             autoComplete="current-password"
             InputProps={{
               style: {
-                borderRadius: '40px'
+                borderRadius: '40px',
+                background: '#F2FDFF'
               },
               startAdornment: (
                 <LockOutlined sx={{ marginRight: '8px' }} />

@@ -5,7 +5,7 @@ import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, getAdd
 import { Container, Typography, TextField, Button, Grid, Divider } from '@mui/material';
 import { EmailOutlined, LockOutlined, Google } from '@mui/icons-material';
 import {Link} from "react-router-dom";
-import logo from "../assets/logo/logoWhite.png";
+import logo from "../assets/WhiteUniMate.png";
 
 const Login = () => {
   const [errorMessage, setErrorMessage] = useState('');
@@ -62,7 +62,7 @@ const Login = () => {
         flexDirection: 'column', 
         textAlign: 'left', 
         height: '100vh', 
-        width: '50vw', 
+        width: '40vw', 
         background: 'linear-gradient(100deg, #00B1D2 -5.85%, #5038ED 109.55%)', 
         borderRadius: '0px 70px 0px 0px',
         // backgroundImage: `url(${loginBackground})`, 
@@ -73,7 +73,7 @@ const Login = () => {
         <div>
           <Link to='/'><img src={logo} height= '100'/></Link>
         </div>
-        <div style={{color: 'white', fontSize: '36px', fontWeight: '600'}}>
+        <div style={{marginLeft: '4%',color: 'white', fontSize: '36px', fontWeight: '600'}}>
           Welcome to UniMate 
         </div>
       </Container>
@@ -160,7 +160,7 @@ const Login = () => {
           <Grid container justifyContent="center">
             <Grid item>
               <Button size="small" sx={{color: '#00B1D2'}}>
-                Don't have an account? Sign up
+                <Link to="/signup">Don't have an account? Sign up</Link>
               </Button>
             </Grid>
           </Grid>
