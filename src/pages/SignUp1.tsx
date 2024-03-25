@@ -73,6 +73,26 @@ const SignUp1 = () => {
     setGender(selectedGender);
     setGenderError(selectedGender ? '' : 'Please select a gender');
   };
+
+//   const handleFinishSignUp = (event) => {
+//     event.preventDefault();
+//     // Check if any field is empty
+//     // if (!fullName || !dateOfBirth || !gender || !schoolName || !phoneNumber) {
+//     //   alert('Please fill in all required fields.');
+//     //   return;
+//     // }
+//     window.location.href = "/signup2";
+
+//     if (!phoneNumber) {
+//         setPhoneNumberError('Please input a valid phone number!');
+//         return false;
+//     } else if (!schoolName){
+//         setErrorSchool(!errorSchool);
+//         return false;
+//     } else{
+//         window.location.href = "/signup2";
+//     }
+//   };
   
   return (
         <Container component="main" maxWidth={false} sx={{display: 'flex', flexDirection: 'row', alignItems: 'center', height: '100%', width: '100vw', backgroundColor: 'white', paddingLeft: '0 !important' }}>
@@ -304,10 +324,10 @@ const SignUp1 = () => {
                     variant="outlined"
                     margin="normal"
                     fullWidth
-                    id="school"
+                    id="schoolName"
                     placeholder="Enter your current school"
-                    name="school"
-                    autoComplete="school"
+                    name="schoolName"
+                    autoComplete="schoolName"
                     InputProps={{
                         style: {
                         borderRadius: "40px",
@@ -320,7 +340,7 @@ const SignUp1 = () => {
                     }}
                     value={schoolName}
                     onChange={handleSchoolNameChange}
-                    error={errorSchool}
+                    error={!!errorSchool}
                     helperText={errorSchool ? 'Please input your current school!' : ''}
                 />
                 <Typography variant="subtitle1" sx={{
@@ -348,9 +368,9 @@ const SignUp1 = () => {
                     variant="outlined"
                     margin="normal"
                     fullWidth
-                    id="phone"
+                    id="phoneNumber"
                     placeholder="Enter your phone number"
-                    name="phone"
+                    name="phoneNumber"
                     autoComplete="tel"
                     InputProps={{
                         style: {
@@ -370,6 +390,7 @@ const SignUp1 = () => {
                         type="submit"
                         variant="contained"
                         color="primary"
+                        // onClick={handleFinishSignUp}
                         style={{ 
                             width: '160px',
                             height: '45px',
