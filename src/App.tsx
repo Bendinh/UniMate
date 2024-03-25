@@ -6,6 +6,8 @@ import Mentors from './pages/Mentors.tsx';
 import MentorProfile from './pages/MentorProfile.tsx';
 import SignUp from './pages/signup.tsx';
 import Login from './pages/Login.tsx';
+import SignUp1 from "./pages/SignUp1.tsx"
+import SignUp2 from "./pages/SignUp2.tsx"
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route path="/signup" element={<SignUp/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/mentorProfile/:mentorID" element={<MentorProfile/>}></Route>
+          <Route path="/signup1" element={<SignUp1/>}></Route>
+          <Route path="/signup2" element={<SignUp2/>}></Route>
         </Routes>
       </div>
     </>

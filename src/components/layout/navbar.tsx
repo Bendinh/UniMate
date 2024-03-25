@@ -1,15 +1,20 @@
-import {Link} from "react-router-dom";
-import { useEffect, useState } from "react";
+import {Link, useLocation} from "react-router-dom";
+import { useEffect, useState} from "react";
 import "../../styles/navbar.css";
 import logo from "../../assets/logo/unimate_logo.png";
 import { useRef } from 'react';
 import {auth} from "../../services/firebase"
 import {onAuthStateChanged } from "firebase/auth";
+import {Avatar} from "@mui/material"
 import {Menu, AccountCircle} from '@mui/icons-material';
 
 export const Navbar = () => {
     const [isAuthenticated,setIsAuthenticated] = useState(false);
+    const [name,setName] = useState("");
     const menu = useRef<HTMLDivElement>(null);
+    const location = useLocation();
+    const hideNavbarPaths = ["/login", "/signup", "/signup1", "/signup2"];
+
     const openMenu = () =>{
         if (menu.current) {
             if (menu.current.className == "menu"){
@@ -24,12 +29,46 @@ export const Navbar = () => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 setIsAuthenticated(true)
+                setName(user.displayName || "");
             }
             else {
                 setIsAuthenticated(false)
             }
         });
     });
+
+    
+    function stringToColor(string: string) {
+        let hash = 0;
+        let i;
+    
+        /* eslint-disable no-bitwise */
+        for (i = 0; i < string.length; i += 1) {
+        hash = string.charCodeAt(i) + ((hash << 5) - hash);
+        }
+    
+        let color = '#';
+    
+        for (i = 0; i < 3; i += 1) {
+        const value = (hash >> (i * 8)) & 0xff;
+        color += `00${value.toString(16)}`.slice(-2);
+        }
+        /* eslint-enable no-bitwise */
+        return color;
+    }
+  
+    function stringAvatar(name: string) {
+        return {
+        sx: {
+            bgcolor: stringToColor(name),
+        },
+        children: `${name.split(' ')[0][0]}${name.split(' ')[1][0]}`,
+        };
+    }
+
+    if (hideNavbarPaths.includes(location.pathname)) {
+        return null; // Do not render the navbar for the specified paths
+    }
     
     return (
     <>
@@ -43,11 +82,10 @@ export const Navbar = () => {
             </div>
             <div className='item login'>
                 {isAuthenticated ? (
-                <div className='icon'><AccountCircle/></div>
+                <div><Avatar {...stringAvatar(name)}/></div>
                 ) : (
                 <>
-                    <div className='icon'><AccountCircle/></div>
-                    <Link to='/signup'>LOGIN</Link>
+                    <Link to='/login'>LOGIN</Link>
                 </>
                 )}
                 </div>

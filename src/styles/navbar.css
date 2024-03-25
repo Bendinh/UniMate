@@ -53,6 +53,9 @@ nav .nav-container .item{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 28px;
     height: 26.631px;
     position: absolute;

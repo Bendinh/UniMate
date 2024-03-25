@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import "../pages/signup.css";
 import WhiteLogo from "../assets/WhiteUniMate.png"
 import {auth, GGprovider, FBprovider} from "../services/firebase"
-import { createUserWithEmailAndPassword,GoogleAuthProvider, FacebookAuthProvider, signInWithPopup } from 'firebase/auth';
+import { createUserWithEmailAndPassword,GoogleAuthProvider, FacebookAuthProvider, signInWithPopup, getAdditionalUserInfo } from 'firebase/auth';
 import { Container, Paper, Typography, TextField, Button, Grid, Divider } from '@mui/material';
 import { EmailOutlined, LockOutlined, Google, Facebook } from '@mui/icons-material';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 export const SignUp = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
     const CreateAcc = (e:React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -32,7 +33,14 @@ export const SignUp = () => {
         // The signed-in user info.
         const user = result.user;
         // IdP data available using getAdditionalUserInfo(result)
-        // ...
+        const additionalUserInfo = getAdditionalUserInfo(result);
+        if (additionalUserInfo?.isNewUser) {
+        console.log('New user signed up via Google.');
+        navigate('/signup1'); // Redirect to sign up process
+        } else {
+        console.log('Existing user signed in via Google.');
+        navigate('/'); // Redirect to the main page
+        }
         }).catch((error) => {
         // Handle Errors here.
         const errorCode = error.code;
