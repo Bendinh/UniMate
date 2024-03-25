@@ -256,6 +256,7 @@ const SignUp1 = () => {
                     fullWidth
                     id="gender"
                     name="gender"
+                    label="Enter preferred gender"
                     select
                     SelectProps={{
                     native: true,
