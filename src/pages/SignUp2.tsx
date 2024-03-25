@@ -62,7 +62,7 @@ const SignUp2 = () => {
 //   };
   
   return (
-        <Container component="main" maxWidth={false} sx={{display: 'flex', flexDirection: 'row', alignItems: 'center', height: '100%', width: '100vw', backgroundColor: 'white', paddingLeft: '0 !important' }}>
+        <Container component="main" maxWidth={false} sx={{display: 'flex', flexDirection: 'row', alignItems: 'center', height: '100%', width: '100vw', backgroundColor: 'white', paddingLeft: '0 !important', overflow: 'auto' }}>
             <Container maxWidth="xs" sx={{backgroundColor: "white"}}>
             <CssBaseline />
             <div style={{ marginTop: '8px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
