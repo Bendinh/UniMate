@@ -13,6 +13,55 @@ const SignUp2 = () => {
     setdone(selecteddone);
     setdoneError(selecteddone ? '' : 'Please select all that apply');
   };
+
+  // Function to ensure user selected help
+  const [help, sethelp] = useState('');
+  const [helpError, sethelpError] = useState('');
+
+  const handlehelpChange = (event) => {
+    const selectedhelp = event.target.value;
+    sethelp(selectedhelp);
+    sethelpError(selectedhelp ? '' : 'Please select all that apply');
+  };
+
+  // Function to ensure user selected major
+  const [major, setmajor] = useState('');
+  const [majorError, setmajorError] = useState('');
+
+  const handlemajorChange = (event) => {
+    const selectedmajor = event.target.value;
+    setmajor(selectedmajor);
+    setmajorError(selectedmajor ? '' : 'Please select all that apply');
+  };
+
+  // Function to ensure user selected country
+  const [country, setcountry] = useState('');
+  const [countryError, setcountryError] = useState('');
+
+  const handlecountryChange = (event) => {
+    const selectedcountry = event.target.value;
+    setcountry(selectedcountry);
+    setcountryError(selectedcountry ? '' : 'Please select all that apply');
+  };
+
+  const handleFinishSignUp = (event) => {
+    event.preventDefault();
+    // Check if any field is empty
+    if (!done) {
+      setdoneError(event.target.value ? '' : 'Please select all that apply');
+    } if (!help){
+      sethelpError(event.target.value ? '' : 'Please select all that apply');
+    } if (!major){
+      setmajorError(event.target.value ? '' : 'Please select all that apply');
+    } if (!country){
+      setcountryError(event.target.value ? '' : 'Please select all that apply');
+    } if(done && help && major && country) {
+        window.location.href = "/mentors";
+        return;
+    }
+
+    
+  };
   
   return (
         <Container component="main" maxWidth={false} sx={{display: 'flex', flexDirection: 'row', alignItems: 'center', height: '100%', width: '100vw', backgroundColor: 'white', paddingLeft: '0 !important' }}>
@@ -76,11 +125,10 @@ const SignUp2 = () => {
                     helperText={doneError}
                 >
                     <option aria-label="None" value="" />
-                    <option value="male">Resume Review</option>
-                    <option value="female">Mock Interview</option>
-                    <option value="nonbinary">Option 3</option>
-                    <option value="selfdescribe">Option 4</option>
-                    <option value="prefernottoanswer">Option 5</option>
+                    <option value="youtube">Watch YouTube</option>
+                    <option value="talk">Talk to People</option>
+                    <option value="apply">Started Application</option>
+                    <option value="nothing">Nothing</option>
                 </TextField>
 
 
@@ -109,9 +157,9 @@ const SignUp2 = () => {
                     variant="outlined"
                     margin="normal"
                     fullWidth
-                    id="done"
+                    id="help"
                     label="Please select all that apply"
-                    name="done"
+                    name="help"
                     select
                     SelectProps={{
                     native: true,
@@ -122,17 +170,16 @@ const SignUp2 = () => {
                         border: "1px solid #D0D0D0"
                         }
                     }}
-                    value={done}
-                    onChange={handledoneChange}
-                    error={!!doneError}
-                    helperText={doneError}
+                    value={help}
+                    onChange={handlehelpChange}
+                    error={!!helpError}
+                    helperText={helpError}
                 >
                     <option aria-label="None" value="" />
-                    <option value="male">Resume Review</option>
-                    <option value="female">Mock Interview</option>
-                    <option value="nonbinary">Option 3</option>
-                    <option value="selfdescribe">Option 4</option>
-                    <option value="prefernottoanswer">Option 5</option>
+                    <option value="resume">Resume Review</option>
+                    <option value="interview">Mock Interview</option>
+                    <option value="application">Application Writing</option>
+                    <option value="other">Other</option>
                 </TextField>
 
 
@@ -161,9 +208,9 @@ const SignUp2 = () => {
                     variant="outlined"
                     margin="normal"
                     fullWidth
-                    id="done"
+                    id="major"
                     label="Please select all that apply"
-                    name="done"
+                    name="major"
                     select
                     SelectProps={{
                     native: true,
@@ -174,17 +221,17 @@ const SignUp2 = () => {
                         border: "1px solid #D0D0D0"
                         }
                     }}
-                    value={done}
-                    onChange={handledoneChange}
-                    error={!!doneError}
-                    helperText={doneError}
+                    value={major}
+                    onChange={handlemajorChange}
+                    error={!!majorError}
+                    helperText={majorError}
                 >
                     <option aria-label="None" value="" />
-                    <option value="male">Resume Review</option>
-                    <option value="female">Mock Interview</option>
-                    <option value="nonbinary">Option 3</option>
-                    <option value="selfdescribe">Option 4</option>
-                    <option value="prefernottoanswer">Option 5</option>
+                    <option value="cs">Computer Science</option>
+                    <option value="arts">Arts</option>
+                    <option value="finance">Finance</option>
+                    <option value="ds">Data Science</option>
+                    <option value="other">Other</option>
                 </TextField>
 
 
@@ -213,9 +260,9 @@ const SignUp2 = () => {
                     variant="outlined"
                     margin="normal"
                     fullWidth
-                    id="done"
+                    id="country"
                     label="Please select all that apply"
-                    name="done"
+                    name="country"
                     select
                     SelectProps={{
                     native: true,
@@ -226,17 +273,17 @@ const SignUp2 = () => {
                         border: "1px solid #D0D0D0"
                         }
                     }}
-                    value={done}
-                    onChange={handledoneChange}
-                    error={!!doneError}
-                    helperText={doneError}
+                    value={country}
+                    onChange={handlecountryChange}
+                    error={!!countryError}
+                    helperText={countryError}
                 >
                     <option aria-label="None" value="" />
-                    <option value="male">Resume Review</option>
-                    <option value="female">Mock Interview</option>
-                    <option value="nonbinary">Option 3</option>
-                    <option value="selfdescribe">Option 4</option>
-                    <option value="prefernottoanswer">Option 5</option>
+                    <option value="us">United States</option>
+                    <option value="germany">Germany</option>
+                    <option value="switzerland">Switzerland</option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="other">Other</option>
                 </TextField>
                 
                 
@@ -264,6 +311,7 @@ const SignUp2 = () => {
                         color="primary"
                         component={Link}
                         to="/"
+                        onClick={handleFinishSignUp}
                         style={{ 
                             width: '160px',
                             fontFamily: 'Arial',
