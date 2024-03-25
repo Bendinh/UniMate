@@ -75,7 +75,6 @@ const SignUp1 = () => {
   };
   
   return (
-    <div>
         <Container component="main" maxWidth={false} sx={{display: 'flex', flexDirection: 'row', alignItems: 'center', height: '100%', width: '100vw', backgroundColor: 'white', paddingLeft: '0 !important' }}>
             <Container maxWidth="xs" sx={{backgroundColor: "white"}}>
             <CssBaseline />
@@ -256,7 +255,6 @@ const SignUp1 = () => {
                     margin="normal"
                     fullWidth
                     id="gender"
-                    label="Select your preferred gender"
                     name="gender"
                     select
                     SelectProps={{
@@ -387,7 +385,6 @@ const SignUp1 = () => {
             </div>
             </Container>
         </Container>
-    </div>
   );
 };
 

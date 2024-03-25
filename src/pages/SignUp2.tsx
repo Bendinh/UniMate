@@ -15,7 +15,6 @@ const SignUp2 = () => {
   };
   
   return (
-    <div>
         <Container component="main" maxWidth={false} sx={{display: 'flex', flexDirection: 'row', alignItems: 'center', height: '100%', width: '100vw', backgroundColor: 'white', paddingLeft: '0 !important' }}>
             <Container maxWidth="xs" sx={{backgroundColor: "white"}}>
             <CssBaseline />
@@ -284,7 +283,6 @@ const SignUp2 = () => {
             </div>
             </Container>
         </Container>
-    </div>
   );
 };
 

@@ -40,7 +40,7 @@ const Login = () => {
     const additionalUserInfo = getAdditionalUserInfo(result);
     if (additionalUserInfo?.isNewUser) {
       console.log('New user signed up via Google.');
-      navigate('/signup'); // Redirect to sign up process
+      navigate('/signup1'); // Redirect to sign up process
     } else {
       console.log('Existing user signed in via Google.');
       navigate('/'); // Redirect to the main page

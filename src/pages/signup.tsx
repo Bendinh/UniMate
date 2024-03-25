@@ -17,6 +17,7 @@ export const SignUp = () => {
         createUserWithEmailAndPassword (auth, email, password) 
         .then ((userCredential) => {
             console.log(userCredential);
+            navigate('/signup1');
         })
         .catch((error) => {
             console.log(error)
@@ -53,26 +54,26 @@ export const SignUp = () => {
         });
     }
 
-    const FacebookSignIn = () => {
-        signInWithPopup(auth, FBprovider)
-        .then((result) => {
-        // The signed-in user info.
-        const user = result.user;
-        // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-        const credential = FacebookAuthProvider.credentialFromResult(result);
-        const accessToken = credential?.accessToken;
-    // IdP data available using getAdditionalUserInfo(result)
-        })
-        .catch((error) => {
-        // Handle Errors here.
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // The email of the user's account used.
-        const email = error.customData.email;
-        // The AuthCredential type that was used.
-        const credential = FacebookAuthProvider.credentialFromError(error);
-        });
-    }
+    // const FacebookSignIn = () => {
+    //     signInWithPopup(auth, FBprovider)
+    //     .then((result) => {
+    //     // The signed-in user info.
+    //     const user = result.user;
+    //     // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+    //     const credential = FacebookAuthProvider.credentialFromResult(result);
+    //     const accessToken = credential?.accessToken;
+    // // IdP data available using getAdditionalUserInfo(result)
+    //     })
+    //     .catch((error) => {
+    //     // Handle Errors here.
+    //     const errorCode = error.code;
+    //     const errorMessage = error.message;
+    //     // The email of the user's account used.
+    //     const email = error.customData.email;
+    //     // The AuthCredential type that was used.
+    //     const credential = FacebookAuthProvider.credentialFromError(error);
+    //     });
+    // }
 
     return (
         <Container component="main" maxWidth={false} sx={{font: 'Montserrat',position: 'absolute',paddingLeft: '0 !important',display: 'flex', flexDirection: 'row', alignItems: 'center', height: '100vh', width: '100vw', background: 'white' }}>
@@ -99,7 +100,6 @@ export const SignUp = () => {
             required
             fullWidth
             id="email"
-            label="Email Address"
             placeholder='Enter your email address (ex: 123@gmail.com)'
             onChange={(e) => setEmail(e.currentTarget.value)}
             name="email"
@@ -120,7 +120,6 @@ export const SignUp = () => {
             required
             fullWidth
             name="password"
-            label="Create a Password"
             type="password"
             onChange={(e) => setPassword(e.target.value)}
             id="password"
