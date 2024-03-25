@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import "../pages/signup.css";
 import WhiteLogo from "../assets/WhiteUniMate.png"
-import {auth, GGprovider, FBprovider} from "../services/firebase"
-import { createUserWithEmailAndPassword,GoogleAuthProvider, FacebookAuthProvider, signInWithPopup, getAdditionalUserInfo } from 'firebase/auth';
+import {auth, GGprovider} from "../services/firebase"
+import { createUserWithEmailAndPassword, signInWithPopup, getAdditionalUserInfo } from 'firebase/auth';
 import { Container, Paper, Typography, TextField, Button, Grid, Divider } from '@mui/material';
-import { EmailOutlined, LockOutlined, Google, Facebook } from '@mui/icons-material';
+import { EmailOutlined, LockOutlined, Google } from '@mui/icons-material';
 import {Link, useNavigate} from "react-router-dom";
 
 export const SignUp = () => {
@@ -29,10 +29,10 @@ export const SignUp = () => {
         .then((result) => {
         console.log(result);
         // This gives you a Google Access Token. You can use it to access the Google API.
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential?.accessToken;
-        // The signed-in user info.
-        const user = result.user;
+        // const credential = GoogleAuthProvider.credentialFromResult(result);
+        // const token = credential?.accessToken;
+        // // The signed-in user info.
+        // const user = result.user;
         // IdP data available using getAdditionalUserInfo(result)
         const additionalUserInfo = getAdditionalUserInfo(result);
         if (additionalUserInfo?.isNewUser) {
@@ -42,14 +42,14 @@ export const SignUp = () => {
         console.log('Existing user signed in via Google.');
         navigate('/'); // Redirect to the main page
         }
-        }).catch((error) => {
-        // Handle Errors here.
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // The email of the user's account used.
-        const email = error.customData.email;
-        // The AuthCredential type that was used.
-        const credential = GoogleAuthProvider.credentialFromError(error);
+        // }).catch((error) => {
+        // // Handle Errors here.
+        // const errorCode = error.code;
+        // const errorMessage = error.message;
+        // // The email of the user's account used.
+        // const email = error.customData.email;
+        // // The AuthCredential type that was used.
+        // const credential = GoogleAuthProvider.credentialFromError(error);
         // ...
         });
     }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, TextField, Button, Typography, Avatar, CssBaseline, IconButton } from '@mui/material';
+import { Container, TextField, Button, Typography, CssBaseline } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 const SignUp2 = () => { 
@@ -8,7 +8,7 @@ const SignUp2 = () => {
   const [done, setdone] = useState('');
   const [doneError, setdoneError] = useState('');
 
-  const handledoneChange = (event) => {
+  const handledoneChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const selecteddone = event.target.value;
     setdone(selecteddone);
     setdoneError(selecteddone ? '' : 'Please select all that apply');
@@ -18,7 +18,7 @@ const SignUp2 = () => {
   const [help, sethelp] = useState('');
   const [helpError, sethelpError] = useState('');
 
-  const handlehelpChange = (event) => {
+  const handlehelpChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const selectedhelp = event.target.value;
     sethelp(selectedhelp);
     sethelpError(selectedhelp ? '' : 'Please select all that apply');
@@ -28,7 +28,7 @@ const SignUp2 = () => {
   const [major, setmajor] = useState('');
   const [majorError, setmajorError] = useState('');
 
-  const handlemajorChange = (event) => {
+  const handlemajorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const selectedmajor = event.target.value;
     setmajor(selectedmajor);
     setmajorError(selectedmajor ? '' : 'Please select all that apply');
@@ -38,30 +38,28 @@ const SignUp2 = () => {
   const [country, setcountry] = useState('');
   const [countryError, setcountryError] = useState('');
 
-  const handlecountryChange = (event) => {
+  const handlecountryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const selectedcountry = event.target.value;
     setcountry(selectedcountry);
     setcountryError(selectedcountry ? '' : 'Please select all that apply');
   };
 
-  const handleFinishSignUp = (event) => {
-    event.preventDefault();
-    // Check if any field is empty
-    if (!done) {
-      setdoneError(event.target.value ? '' : 'Please select all that apply');
-    } if (!help){
-      sethelpError(event.target.value ? '' : 'Please select all that apply');
-    } if (!major){
-      setmajorError(event.target.value ? '' : 'Please select all that apply');
-    } if (!country){
-      setcountryError(event.target.value ? '' : 'Please select all that apply');
-    } if(done && help && major && country) {
-        window.location.href = "/mentors";
-        return;
-    }
-
-    
-  };
+//   const handleFinishSignUp = (event: React.ChangeEvent<HTMLInputElement>) => {
+//     event.preventDefault();
+//     // Check if any field is empty
+//     if (!done) {
+//       setdoneError(event.target.value ? '' : 'Please select all that apply');
+//     } if (!help){
+//       sethelpError(event.target.value ? '' : 'Please select all that apply');
+//     } if (!major){
+//       setmajorError(event.target.value ? '' : 'Please select all that apply');
+//     } if (!country){
+//       setcountryError(event.target.value ? '' : 'Please select all that apply');
+//     } if(done && help && major && country) {
+//         window.location.href = "/mentors";
+//         return;
+//     } 
+//   };
   
   return (
         <Container component="main" maxWidth={false} sx={{display: 'flex', flexDirection: 'row', alignItems: 'center', height: '100%', width: '100vw', backgroundColor: 'white', paddingLeft: '0 !important' }}>
@@ -311,7 +309,7 @@ const SignUp2 = () => {
                         color="primary"
                         component={Link}
                         to="/"
-                        onClick={handleFinishSignUp}
+                        // onClick={handleFinishSignUp}
                         style={{ 
                             width: '160px',
                             fontFamily: 'Arial',

@@ -12,7 +12,7 @@ const SignUp1 = () => {
   const [dateOfBirth, setDateOfBirth] = useState('');
   const [isValid, setIsValid] = useState(true);
 
-  const handleChange = (event) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputDate = event.target.value;
     // Regular expression to match DD/MM/YYYY format
     const regex = /^(0[1-9]|[1-2][0-9]|3[0-1])\/(0[1-9]|1[0-2])\/\d{4}$/;
@@ -25,7 +25,7 @@ const SignUp1 = () => {
   const [fullName, setFullName] = useState('');
   const [error, setError] = useState(false);
 
-  const handleFullNameChange = (event) => {
+  const handleFullNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputFullName = event.target.value;
     setFullName(inputFullName);
     const validFullName = /^[a-zA-Z ]+$/.test(inputFullName);
@@ -36,7 +36,7 @@ const SignUp1 = () => {
   const [schoolName, setSchoolName] = useState('');
   const [errorSchool, setErrorSchool] = useState(false);
 
-  const handleSchoolNameChange = (event) => {
+  const handleSchoolNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputSchoolName = event.target.value;
     setSchoolName(inputSchoolName);
     const validSchoolName = /^[a-zA-Z ]+$/.test(inputSchoolName);
@@ -47,7 +47,7 @@ const SignUp1 = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [phoneNumberError, setPhoneNumberError] = useState('');
 
-  const validatePhoneNumber = (value) => {
+  const validatePhoneNumber = (value: string) => {
     const phoneNumberPattern = /^\d{10}$/; // Assuming 10-digit phone number
     if (!phoneNumberPattern.test(value)) {
         setPhoneNumberError('Please input a valid phone number!');
@@ -58,7 +58,7 @@ const SignUp1 = () => {
     }
   };
 
-  const handlePhoneChange = (event) => {
+  const handlePhoneChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     setPhoneNumber(value);
     validatePhoneNumber(value);
@@ -68,7 +68,7 @@ const SignUp1 = () => {
   const [gender, setGender] = useState('');
   const [genderError, setGenderError] = useState('');
 
-  const handleGenderChange = (event) => {
+  const handleGenderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const selectedGender = event.target.value;
     setGender(selectedGender);
     setGenderError(selectedGender ? '' : 'Please select a gender');
