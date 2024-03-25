@@ -15,7 +15,7 @@ export const Mentors = () => {
     const [filterAttributes, setFilterAttributes] = useState<FilterProps>({topics: [], majors: [], nationalities: [], schools: []});
     const {topics, majors, nationalities, schools} = filterAttributes
     const [filterAttempted, setFilterAttempted] = useState(false);
-
+    {/*const isAuth = useAuth()*/}
     const handleFilterChange = (value: string, filterType: keyof FilterProps) => {
         setFilterCriteria(prevCriteria => ({
             ...prevCriteria,

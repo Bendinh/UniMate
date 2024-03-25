@@ -1,17 +1,37 @@
 import '../../styles/card.css'
 import { Mentor } from '../../types/mentor'
 import { PopupButton } from "react-calendly";
-import {BusinessCenter, School, Star} from '@mui/icons-material';
+import { useEffect, useState} from "react";
 import { useNavigate } from 'react-router-dom';
+import {BusinessCenter, School, Star} from '@mui/icons-material';
+import {auth} from "../../services/firebase"
+import {onAuthStateChanged } from "firebase/auth";
 
 // Card component to display user profile and attributes
 function Card({mentors}: {mentors: Mentor[]}) {
-  
   const navigate = useNavigate();
+  const [isAuthenticated,setIsAuthenticated] = useState(false);
   
   const mentorProfile = (mentor:string) =>{
     navigate(`/mentorProfile/${mentor}`)
   }
+
+  const handleBookingClick = () => {
+    if (!isAuthenticated) {
+      navigate('/login'); // Assuming signInPage is a function that handles redirection
+    }
+  };
+
+  useEffect (() => {
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            setIsAuthenticated(true)
+        }
+        else {
+            setIsAuthenticated(false)
+        }
+    });
+});
 
   return (
   <> 
@@ -42,14 +62,19 @@ function Card({mentors}: {mentors: Mentor[]}) {
           </div>
         </span>
         <div className="button-holder">
-          <div>
-            <PopupButton className='button'
-            url={mentor.bookingLink}
-            rootElement={document.getElementById("root")!}
-            text="Book"
-            />
-          </div>
-        </div>
+              {isAuthenticated ? (
+                <PopupButton
+                  className='button'
+                  url={mentor.bookingLink}
+                  rootElement={document.getElementById("root")!}
+                  text="Book"
+                />
+              ) : (
+                <button className='button' onClick={() => handleBookingClick()}>
+                  Book
+                </button>
+              )}
+            </div>
     </div>
     ))}
   </div>
