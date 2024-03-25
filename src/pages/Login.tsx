@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth, GGprovider } from '../services/firebase';
-import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, getAdditionalUserInfo } from "firebase/auth";
+import { signInWithEmailAndPassword, signInWithPopup, getAdditionalUserInfo } from "firebase/auth";
 import { Container, Typography, TextField, Button, Grid, Divider } from '@mui/material';
 import { EmailOutlined, LockOutlined, Google } from '@mui/icons-material';
 import {Link} from "react-router-dom";
@@ -32,10 +32,10 @@ const Login = () => {
     signInWithPopup(auth, GGprovider)
     .then((result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.
-    const credential = GoogleAuthProvider.credentialFromResult(result);
-    const token = credential?.accessToken;
-    // The signed-in user info.
-    const user = result.user;
+    // const credential = GoogleAuthProvider.credentialFromResult(result);
+    // const token = credential?.accessToken;
+    // // The signed-in user info.
+    // const user = result.user;
       // Check if the user is new or existing
     const additionalUserInfo = getAdditionalUserInfo(result);
     if (additionalUserInfo?.isNewUser) {
