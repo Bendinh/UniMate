@@ -137,6 +137,8 @@ export const SignUp = () => {
           />
           <Button
             type="submit"
+            component={Link}
+            to="/signup1"
             fullWidth
             variant="contained"
             sx={{ 
