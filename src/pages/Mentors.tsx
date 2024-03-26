@@ -57,6 +57,21 @@ export const Mentors = () => {
         filterMentors();
     }, [filterCriteria, fetchedMentors]); // This useEffect depends on filterCriteria and fetchedMentors
 
+    // Function: check if an event is a Calendly event
+    function isCalendlyEvent (e) {
+        return e.origin === "https://calendly.com" && e.data.event && e.data.event.indexOf("calendly.") === 0;
+    };
+
+    window.addEventListener("message", function (e) {
+        if(isCalendlyEvent(e)) {
+            // Check if the event is a booking event
+            if(e.data.event == "calendly.event_scheduled") {
+                console.log("A booking has been made");
+                console.log(e.data.payload);
+            }
+        }
+    });
+
 
     return (
         <div>
