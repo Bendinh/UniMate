@@ -4,7 +4,9 @@ import { useState, useEffect } from "react";
 import { list_mentors } from '../services/firebase';
 import { Mentor } from '../types/mentor';
 import { FilterProps } from '../types/filterProps';
+import {auth} from "../services/firebase";
 import Filter from '../components/Mentors/filter';
+import emailjs from '@emailjs/browser';
 
 
 export const Mentors = () => {
@@ -15,6 +17,7 @@ export const Mentors = () => {
     const [filterAttributes, setFilterAttributes] = useState<FilterProps>({topics: [], majors: [], nationalities: [], schools: []});
     const {topics, majors, nationalities, schools} = filterAttributes
     const [filterAttempted, setFilterAttempted] = useState(false);
+    const user = auth.currentUser;
     {/*const isAuth = useAuth()*/}
     const handleFilterChange = (value: string, filterType: keyof FilterProps) => {
         setFilterCriteria(prevCriteria => ({
@@ -62,15 +65,19 @@ export const Mentors = () => {
         return e.origin === "https://calendly.com" && e.data.event && e.data.event.indexOf("calendly.") === 0;
     };
 
-    window.addEventListener("message", function (e) {
-        if(isCalendlyEvent(e)) {
-            // Check if the event is a booking event
-            if(e.data.event == "calendly.event_scheduled") {
-                console.log("A booking has been made");
-                console.log(e.data.payload);
+    function sendProfile (mentor) {
+        window.addEventListener("message", function (e) {
+            if(isCalendlyEvent(e)) {
+                // Check if the event is a booking event
+                if(e.data.event == "calendly.event_scheduled") {
+                    e.preventDefault();
+                    emailjs.send('service_7t0rdbz', 'template_2ub5ln6', {recipient: mentor.email, to_name: mentor.name, message: user?.email},'Oq571h_S0mxwb1wTL')
+                }
             }
-        }
-    });
+        })
+    }
+
+    
 
 
     return (
@@ -84,7 +91,7 @@ export const Mentors = () => {
             </div>
             
             {displayedMentors.length > 0 ? (
-                <Card mentors={displayedMentors} />
+                <Card mentors={displayedMentors} onMentorSelect={sendProfile}/>
             ) : filterAttempted && (
                 <div style={{ textAlign: 'center', marginTop: 'auto', fontSize: '4vh' }}>
                     Oops, there are no current mentors that fit your criteria.

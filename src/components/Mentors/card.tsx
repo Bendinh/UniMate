@@ -8,17 +8,20 @@ import {auth} from "../../services/firebase"
 import {onAuthStateChanged } from "firebase/auth";
 
 // Card component to display user profile and attributes
-function Card({mentors}: {mentors: Mentor[]}) {
+function Card({mentors, onMentorSelect}: {mentors: Mentor[], onMentorSelect: (email: string) => void}) {
   const navigate = useNavigate();
+  const [current, setCurrentMentor] = useState('');
   const [isAuthenticated,setIsAuthenticated] = useState(false);
-  
   const mentorProfile = (mentor:string) =>{
     navigate(`/mentorProfile/${mentor}`)
   }
 
-  const handleBookingClick = () => {
+  const handleBookingClick = (mentor) => {
     if (!isAuthenticated) {
       navigate('/login'); // Assuming signInPage is a function that handles redirection
+    }
+    else {
+      onMentorSelect(mentor);
     }
   };
 
@@ -63,18 +66,20 @@ function Card({mentors}: {mentors: Mentor[]}) {
         </span>
         <div className="button-holder">
               {isAuthenticated ? (
+                <div onClick={() => handleBookingClick(mentor)}>
                 <PopupButton
                   className='button'
                   url={mentor.bookingLink}
                   rootElement={document.getElementById("root")!}
                   text="Book"
                 />
+                </div>
               ) : (
-                <button className='button' onClick={() => handleBookingClick()}>
+                <button className='button' onClick={() => handleBookingClick(mentor)}>
                   Book
                 </button>
               )}
-            </div>
+          </div>
     </div>
     ))}
   </div>
