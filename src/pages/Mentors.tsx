@@ -71,7 +71,7 @@ export const Mentors = () => {
                 // Check if the event is a booking event
                 if(e.data.event == "calendly.event_scheduled") {
                     e.preventDefault();
-                    emailjs.send('service_7t0rdbz', 'template_2ub5ln6', {recipient: mentor.email, to_name: mentor.name, message: user?.email},'Oq571h_S0mxwb1wTL')
+                    emailjs.send('service_7t0rdbz', 'template_2ub5ln6', {to_email: mentor.email, to_name: mentor.name, message: "waiting for Hoang to finish mentee's profile", from_name: user?.displayName},'Oq571h_S0mxwb1wTL')
                 }
             }
         })
