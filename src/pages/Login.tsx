@@ -134,7 +134,7 @@ const Login = () => {
 
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <Button size="small" sx={{color: '#00B1D2'}}>
+              <Button component={Link} to="/forgotpassword" size="small" sx={{color: '#00B1D2'}}>
                 Forgot Password?
               </Button>
             </Grid>

@@ -19,7 +19,7 @@ export const Navbar = () => {
     // const [dropdownOpen, setDropdownOpen] = useState(false);
     const menu = useRef<HTMLDivElement>(null);
     const location = useLocation();
-    const hideNavbarPaths = ["/login", "/signup", "/signup1", "/signup2"];
+    const hideNavbarPaths = ["/login", "/signup", "/signup1", "/signup2", "/forgotpassword"];
 
 
     const openMenu = () =>{

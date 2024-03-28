@@ -8,6 +8,7 @@ import SignUp from './pages/signup.tsx';
 import Login from './pages/Login.tsx';
 import SignUp1 from "./pages/SignUp1.tsx"
 import SignUp2 from "./pages/SignUp2.tsx"
+import ForgetPass from "./pages/ForgetPass.tsx"
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/mentorProfile/:mentorID" element={<MentorProfile/>}></Route>
           <Route path="/signup1" element={<SignUp1/>}></Route>
           <Route path="/signup2" element={<SignUp2/>}></Route>
+          <Route path="/forgotpassword" element={<ForgetPass/>}></Route>
         </Routes>
       </div>
     </>
